@@ -648,7 +648,7 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x662
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x6621AA68)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x6621AA68)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x6621AA68)
-F (./Src/main.c)(0x6637F79B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/main.o -MD)
+F (./Src/main.c)(0x663E2DE0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/main.o -MD)
 I (..\..\ITS_BRD_LIB\Inc\init.hCnc\display.h\nc\scanner.h3nc\token.h)(0x00000000)
 I (Inc\calc.hBnc\error_handeling.h)(0x00000000)
 F (.\Src\scanner.c)(0x662370D8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/scanner.o -MD)
@@ -666,18 +666,18 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
 I (..\..\stm32cubef4\Utilities\Fonts\fonts.h)(0x6621A9F2)
 I (..\..\DisplayWaveshare\Inc\LCD_GUI.h)(0x6621A9EC)
 I (..\..\DisplayWaveshare\Inc\LCD_Touch.hs.\..\ITS_BRD_LIB\Inc\keypad.h)(0x00000000)
-F (.\Src\stack.c)(0x6638FCD1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/stack.o -MD)
+F (.\Src\stack.c)(0x663B90E9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/stack.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x656A0472)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h.nc\fake_sprintf.hnnc\stack.h)(0x00000000)
 I (Inc\error_handeling.h)(0x662E86FC)
-F (.\src\fake_sprintf.c)(0x6638FFC1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/fake_sprintf.o -MD)
+F (.\src\fake_sprintf.c)(0x66390F68)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/fake_sprintf.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x656A0472)
 I (C:\Keil_v5\ARM\ARMCLANG\include\limits.h)(0x656A0472)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x656A0472)
-F (.\Src\calc.c)(0x6638F896)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/calc.o -MD)
+F (.\Src\calc.c)(0x663B90E9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/calc.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\limits.h)(0x656A0472)
 I (Inc\display.hM:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x00000000)
-F (.\Src\error_handeling.c)(0x6637C16F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/error_handeling.o -MD)
+F (.\Src\error_handeling.c)(0x663B90E9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/error_handeling.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.hunc\token.h.nc\scanner.h)(0x00000000)
 I (Inc\stack.hAnc\error_handeling.h)(0x00000000)
 F (../../stm32cubef4/Utilities/Fonts/font8.c)(0x6621A9F2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts -Wall -Wextra-I./RTE/_ITSboard-IC:/Users/timon/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/timon/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/font8.o -MD)
@@ -790,12 +790,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -861,12 +861,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -912,12 +912,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -960,12 +960,12 @@ I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x66
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1009,12 +1009,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1056,12 +1056,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1104,12 +1104,12 @@ I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x66
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1178,12 +1178,12 @@ I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x66
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1226,12 +1226,12 @@ I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x66
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x656A0472)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1279,12 +1279,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1368,12 +1368,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x656A0472)
@@ -1420,12 +1420,12 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x662
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x6621AFDC)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x6621AA8A)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x6621AA88)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x6621AA88)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x64F9B88C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x656A0470)
-I (C:\Users\timon\Desktop\Studium\GS Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
+I (C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h)(0x6621AA8A)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x6621AFE0)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x6621AADC)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x6621AA66)
@@ -1459,7 +1459,7 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x6
 I (..\..\ITS_BRD_LIB\Inc\ITS_BRD_conf.hHTE\_ITSboard\RTE_Components.h)(0x00000000)
 I (..\..\ITS_BRD_LIB\Inc\RTE_Device.h)(0x6621A9E2)
 F (..\..\ITS_BRD_LIB\Inc\lcd.h)(0x6621A9E2)()
-F (.\Inc\display.h)(0x662370D8)()
+F (.\Inc\display.h)(0x663B8B53)()
 F (.\Inc\main.h)(0x662E73E6)()
 F (.\Inc\scanner.h)(0x662370D8)()
 F (.\Inc\token.h)(0x662B6946)()

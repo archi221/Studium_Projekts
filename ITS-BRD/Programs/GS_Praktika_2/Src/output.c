@@ -1,5 +1,11 @@
 #include "output.h"
 
+int phase;
+int error = 0;
+
+int phase_matrix[2][2] = {{PHASE_A, PHASE_D},
+													{PHASE_B, PHASE_C}};
+
 int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io) {// true if input
 	if ((pin <=0) || (pin >16)) {
 		return OUT_OF_BOUNDS;
@@ -27,10 +33,42 @@ int setGPIOPin(GPIO_TypeDef* GPIOx, int pin, bool on) {
 	return SUCCESS;
 }
 
-int readGPIOPin(GPIO_TypeDef* GPIOx, int pin) {
+int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value) {
 	//chekc if pin exist
 	if ((pin <= 0) || (pin > 16)) {
 		return OUT_OF_BOUNDS;
 	}
-	return (0x01 << pin) != (GPIOx->IDR & (0x01 << pin));
+	*pin_value = (0x01 << pin) != (GPIOx->IDR & (0x01 << pin));
+	return SUCCESS;
+}
+
+int read_all() {
+	int channel_a, channel_b, error;
+	if (readGPIOPin(GPIOF, 0, &channel_a)){
+		return OUT_OF_BOUNDS;
+	}
+	if (readGPIOPin(GPIOF, 1, &channel_b)) {
+		return OUT_OF_BOUNDS;
+	}
+	if (readGPIOPin(GPIOF, 6, &error)) {
+		return OUT_OF_BOUNDS;
+	}
+	phase = phase_matrix [channel_a][channel_b];
+	return SUCCESS;
+}
+
+int get_phase(int *phase_value) {
+	if (phase == NULL) {
+		return NO_ROTATION_YET;
+	}
+	*phase_value = phase;
+	return SUCCESS;
+}
+
+int get_error() {
+	return error;
+}
+
+int set_all_inputs() {
+	return SUCCESS;
 }

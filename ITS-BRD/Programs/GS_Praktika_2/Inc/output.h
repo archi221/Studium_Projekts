@@ -7,14 +7,18 @@
 #include "delay.h"
 #include "LCD_GUI.h"
 #include "lcd.h"
+#include "error_handeling.h"
 
-#define OUT_OF_BOUNDS 21
-#define SUCCESS 0
+#define PHASE_A 0
+#define PHASE_B 1
+#define PHASE_C 2
+#define PHASE_D 3
+
 
 int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io);
 
 int setGPIOPin(GPIO_TypeDef* GPIOx, int pin, bool on);
 
-int readGPIOPin(GPIO_TypeDef* GPIOx, int pin);
+int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value);
 
 #endif 
