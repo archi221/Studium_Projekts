@@ -701,6 +701,21 @@
               <FileType>1</FileType>
               <FilePath>.\Src\output.c</FilePath>
             </File>
+            <File>
+              <FileName>messurement.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\messurement.c</FilePath>
+            </File>
+            <File>
+              <FileName>error_handeling.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\error_handeling.c</FilePath>
+            </File>
+            <File>
+              <FileName>FSM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\FSM.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1231,6 +1246,21 @@
               <FileName>output.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\output.h</FilePath>
+            </File>
+            <File>
+              <FileName>messurement.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\messurement.h</FilePath>
+            </File>
+            <File>
+              <FileName>error_handeling.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\error_handeling.h</FilePath>
+            </File>
+            <File>
+              <FileName>FSM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\FSM.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2082,6 +2112,21 @@
               <FileType>1</FileType>
               <FilePath>.\Src\output.c</FilePath>
             </File>
+            <File>
+              <FileName>messurement.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\messurement.c</FilePath>
+            </File>
+            <File>
+              <FileName>error_handeling.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\error_handeling.c</FilePath>
+            </File>
+            <File>
+              <FileName>FSM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\FSM.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2612,6 +2657,21 @@
               <FileName>output.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\output.h</FilePath>
+            </File>
+            <File>
+              <FileName>messurement.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\messurement.h</FilePath>
+            </File>
+            <File>
+              <FileName>error_handeling.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\error_handeling.h</FilePath>
+            </File>
+            <File>
+              <FileName>FSM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\FSM.h</FilePath>
             </File>
           </Files>
         </Group>
