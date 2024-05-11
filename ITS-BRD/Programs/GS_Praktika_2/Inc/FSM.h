@@ -16,4 +16,10 @@
 
 int set_fsm_state();
 
+void error();
+
+void right_rotation();
+
+void left_rotation();
+
 #endif 
