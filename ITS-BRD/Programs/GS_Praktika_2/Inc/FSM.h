@@ -12,5 +12,8 @@
 #define ERROR 8
 
 #include "output.h"
+#include "error_handeling.h"
+
+int set_fsm_state();
 
 #endif 
