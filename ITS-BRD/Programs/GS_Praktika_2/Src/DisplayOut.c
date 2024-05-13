@@ -11,12 +11,12 @@ int init_display(){
 	return SUCCESS;
 	}
 
-	int setValues(int Winkel,int Winkelgeschwindigkeit){
+	int setValues(int Winkel, int Winkelgeschwindigkeit){
 	lcdGotoXY( 70, 0);
 	lcdPrintInt(Winkel);
 	lcdGotoXY( 70, 10);
 	lcdPrintInt(Winkelgeschwindigkeit);
-	
+	return SUCCESS;
 	}
 
 

@@ -14,7 +14,8 @@ int transition_table[9][4] = {{RA, RB, ERROR, LD},
 															{LA, RB, ERROR, LD},
 															{RA, RB, RC, RD}};
 int start_fsm() {
-	while (set_fsm_state()) {
+	while (true) {
+		set_fsm_state();
 		functions[fsm_state]();
 	}
 }
@@ -32,9 +33,11 @@ int set_fsm_state() {
 }
 
 void error(){
+//	error_state();
 }
 
 void err_to_l_rotation() {
+	
 }
 
 void err_to_r_rotation() {
