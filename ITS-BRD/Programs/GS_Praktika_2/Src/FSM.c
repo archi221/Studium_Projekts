@@ -1,9 +1,12 @@
 #include "FSM.h"
 
+int pulse_count = 0;
+int last_calculation = 0;
 int fsm_state = ERROR_STATE;
-void (*functions[9])() = {right_rotation, right_rotation, right_rotation, right_rotation,
+void (*functions[13])() = {right_rotation, right_rotation, right_rotation, right_rotation,
 													left_rotation, left_rotation, left_rotation, left_rotation,
-													error};
+													error,
+													no_rotation, no_rotation, no_rotation, no_rotation};
 int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{LA, B, RC, ERROR_STATE},
 															{ERROR_STATE, LB, C, RD},
@@ -29,10 +32,7 @@ int set_fsm_state() {
 	int phase;
 	while (true) {
 		get_phase(&phase);
-		if (fsm_state != transition_table[fsm_state][phase]) {
-			fsm_state = transition_table[fsm_state][phase];
-			return SUCCESS;
-		}
+		fsm_state = transition_table[fsm_state][phase];
 	}
 }
 
@@ -40,24 +40,22 @@ void error(){
 //	error_state();
 }
 
-void err_to_l_rotation() {
-	
-}
-
-void err_to_r_rotation() {
+void no_rotation() {
+	check_time(&pulse_count, &last_calculation);
 }
 
 void right_rotation() {
+	pulse_count++;
+	check_time(&pulse_count, &last_calculation);
+//	set_all_outputs();
 }
 
 void left_rotation() {
+	pulse_count--;
+	check_time(&pulse_count, &last_calculation);
+//	set_all_outputs();
 }
 
-void r_to_l_rotation() {
-}
-
-void l_to_r_rotation() {
-}
 
 
 	

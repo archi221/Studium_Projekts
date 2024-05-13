@@ -17,6 +17,7 @@
 
 #include "output.h"
 #include "error_handeling.h"
+#include "calculations.h"
 
 int set_fsm_state();
 
@@ -25,5 +26,7 @@ void error();
 void right_rotation();
 
 void left_rotation();
+
+void no_rotation();
 
 #endif 
