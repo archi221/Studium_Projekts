@@ -4,15 +4,19 @@ int fsm_state = ERROR_STATE;
 void (*functions[9])() = {right_rotation, right_rotation, right_rotation, right_rotation,
 													left_rotation, left_rotation, left_rotation, left_rotation,
 													error};
-int transition_table[9][4] = {{RA, RB, ERROR_STATE, LD},
-															{LA, RB, RC, ERROR_STATE},
-															{ERROR_STATE, LB, RC, RD},
-															{RA, ERROR_STATE, LC, RD},
-															{RA, ERROR_STATE, LC, LD},
-															{ERROR_STATE, LB, LC, RD},
-															{LA, LB, RC, ERROR_STATE},
-															{LA, RB, ERROR_STATE, LD},
-															{RA, RB, RC, RD}};
+int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
+															{LA, B, RC, ERROR_STATE},
+															{ERROR_STATE, LB, C, RD},
+															{RA, ERROR_STATE, LC, D},
+															{RA, ERROR_STATE, LC, D},
+															{ERROR_STATE, LB, C, RD},
+															{LA, B, RC, ERROR_STATE},
+															{A, RB, ERROR_STATE, LD},
+															{RA, RB, RC, RD},
+															{A, RB, ERROR_STATE, LC},
+															{LA, B, RB, ERROR_STATE},
+															{ERROR_STATE, LB, C, RD},
+															{RA, ERROR_STATE, LC, D}};
 int start_fsm() {
 	while (true) {
 		set_fsm_state();

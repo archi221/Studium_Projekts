@@ -10,6 +10,10 @@
 #define LB 6
 #define LA 7
 #define ERROR_STATE 8
+#define A 9
+#define B 10
+#define C 11
+#define D 12
 
 #include "output.h"
 #include "error_handeling.h"
