@@ -9,7 +9,7 @@
 #define LC 5
 #define LB 6
 #define LA 7
-#define ERROR 8
+#define ERROR_STATE 8
 
 #include "output.h"
 #include "error_handeling.h"

@@ -3,18 +3,18 @@
 
 int init_display(){
 	
-	lcdGotoXY( 0, 0);
+	lcdGotoXY( 0, 1);
 	lcdPrintS("Drehwinkel:");
-	lcdGotoXY( 0, 10);
- 	lcdPrintS("Winkelg. ");
-	
+	lcdGotoXY( 0, 2);
+ 	lcdPrintS("Winkelg. :");
+	setValues(0, 0);
 	return SUCCESS;
 	}
 
 	int setValues(int Winkel, int Winkelgeschwindigkeit){
-	lcdGotoXY( 70, 0);
+	lcdGotoXY( 12, 1);
 	lcdPrintInt(Winkel);
-	lcdGotoXY( 70, 10);
+	lcdGotoXY( 11, 2);
 	lcdPrintInt(Winkelgeschwindigkeit);
 	return SUCCESS;
 	}

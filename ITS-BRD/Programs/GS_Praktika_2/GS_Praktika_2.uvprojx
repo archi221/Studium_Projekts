@@ -716,6 +716,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\FSM.c</FilePath>
             </File>
+            <File>
+              <FileName>DisplayOut.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\DisplayOut.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1261,6 +1266,11 @@
               <FileName>FSM.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\FSM.h</FilePath>
+            </File>
+            <File>
+              <FileName>DisplayOut.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\DisplayOut.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2127,6 +2137,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\FSM.c</FilePath>
             </File>
+            <File>
+              <FileName>DisplayOut.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\DisplayOut.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2672,6 +2687,11 @@
               <FileName>FSM.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\FSM.h</FilePath>
+            </File>
+            <File>
+              <FileName>DisplayOut.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\DisplayOut.h</FilePath>
             </File>
           </Files>
         </Group>

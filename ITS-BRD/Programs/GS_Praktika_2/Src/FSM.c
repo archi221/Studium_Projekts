@@ -1,17 +1,17 @@
 #include "FSM.h"
 
-int fsm_state = ERROR;
+int fsm_state = ERROR_STATE;
 void (*functions[9])() = {right_rotation, right_rotation, right_rotation, right_rotation,
 													left_rotation, left_rotation, left_rotation, left_rotation,
 													error};
-int transition_table[9][4] = {{RA, RB, ERROR, LD},
-															{LA, RB, RC, ERROR},
-															{ERROR, LB, RC, RD},
-															{RA, ERROR, LC, RD},
-															{RA, ERROR, LC, LD},
-															{ERROR, LB, LC, RD},
-															{LA, LB, RC, ERROR},
-															{LA, RB, ERROR, LD},
+int transition_table[9][4] = {{RA, RB, ERROR_STATE, LD},
+															{LA, RB, RC, ERROR_STATE},
+															{ERROR_STATE, LB, RC, RD},
+															{RA, ERROR_STATE, LC, RD},
+															{RA, ERROR_STATE, LC, LD},
+															{ERROR_STATE, LB, LC, RD},
+															{LA, LB, RC, ERROR_STATE},
+															{LA, RB, ERROR_STATE, LD},
 															{RA, RB, RC, RD}};
 int start_fsm() {
 	while (true) {

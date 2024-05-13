@@ -1,5 +1,5 @@
-./itsboard/stm32f4xx_hal_tim.o: \
-  ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c \
+./itsboard/fsm.o: Src\FSM.c Inc\FSM.h Inc\output.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -44,4 +44,10 @@
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h
+  ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h \
+  ..\..\ITS_BRD_LIB\Inc\init.h ..\..\ITS_BRD_LIB\Inc\delay.h \
+  ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
+  ..\..\DisplayWaveshare\Inc\LCD_general.h \
+  ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h ..\..\ITS_BRD_LIB\Inc\lcd.h \
+  Inc\error_handeling.h

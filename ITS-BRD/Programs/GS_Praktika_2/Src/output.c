@@ -1,7 +1,7 @@
 #include "output.h"
 
 int phase;
-int error = 0;
+int error_t = 0;
 
 int phase_matrix[2][2] = {{PHASE_A, PHASE_D},
 													{PHASE_B, PHASE_C}};
@@ -43,14 +43,14 @@ int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value) {
 }
 
 int read_all() {
-	int channel_a, channel_b, error;
+	int channel_a, channel_b, error_t;
 	if (readGPIOPin(GPIOF, 0, &channel_a)){
 		return OUT_OF_BOUNDS;
 	}
 	if (readGPIOPin(GPIOF, 1, &channel_b)) {
 		return OUT_OF_BOUNDS;
 	}
-	if (readGPIOPin(GPIOF, 6, &error)) {
+	if (readGPIOPin(GPIOF, 6, &error_t)) {
 		return OUT_OF_BOUNDS;
 	}
 	phase = phase_matrix [channel_a][channel_b];
@@ -66,7 +66,7 @@ int get_phase(int *phase_value) {
 }
 
 int get_error() {
-	return error;
+	return error_t;
 }
 
 int set_all_inputs() {
