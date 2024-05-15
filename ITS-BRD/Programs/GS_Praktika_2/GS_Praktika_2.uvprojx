@@ -721,6 +721,16 @@
               <FileType>1</FileType>
               <FilePath>.\Src\DisplayOut.c</FilePath>
             </File>
+            <File>
+              <FileName>zeitmessung.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\zeitmessung.c</FilePath>
+            </File>
+            <File>
+              <FileName>calculations.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\calculations.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1271,6 +1281,16 @@
               <FileName>DisplayOut.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\DisplayOut.h</FilePath>
+            </File>
+            <File>
+              <FileName>zeitmessung.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\zeitmessung.h</FilePath>
+            </File>
+            <File>
+              <FileName>calculations.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\calculations.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2142,6 +2162,16 @@
               <FileType>1</FileType>
               <FilePath>.\Src\DisplayOut.c</FilePath>
             </File>
+            <File>
+              <FileName>zeitmessung.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\zeitmessung.c</FilePath>
+            </File>
+            <File>
+              <FileName>calculations.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\calculations.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2692,6 +2722,16 @@
               <FileName>DisplayOut.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\DisplayOut.h</FilePath>
+            </File>
+            <File>
+              <FileName>zeitmessung.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\zeitmessung.h</FilePath>
+            </File>
+            <File>
+              <FileName>calculations.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\calculations.h</FilePath>
             </File>
           </Files>
         </Group>

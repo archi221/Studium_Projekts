@@ -5,47 +5,41 @@
 
 int swap() {
     int value_1, value_2;
-    if (get_value(&value_1))
+    if (pop(&value_1))
         return STACK_UNDERFLOW;
-    pop();
 
-    if (get_value(&value_2)) {
-        push(value_1);
+    if (pop(&value_2)) {
         return STACK_UNDERFLOW;
     }
 
-    pop();
     push(value_1);
     return push(value_2);
 }
 
 int duplicate_first() {
     int value_1;
-    if (get_value(&value_1)) {
+    if (pop(&value_1)) {
         return STACK_UNDERFLOW;// Underflow Stack empty
     }
-
+		push(value_1);
     return push(value_1);
 }
 
 int addition() {
     int value_1, value_2;
-    if (get_value(&value_1)) {
+    if (pop(&value_1)) {
         return STACK_UNDERFLOW;
     }
-    pop();
-    if (get_value(&value_2)) {
+    if (pop(&value_2)) {
         push(value_1);
         return STACK_UNDERFLOW;
     }
-    pop();
-
     if (value_2 > 0) {
-        if (value_1 >= INT_MAX - value_2) {
+        if (value_1 > INT_MAX - value_2) {
             return INT_OVERFLOW;
         }
     } else if (value_2 < 0) {
-        if (value_1 <= INT_MIN - value_2) {
+        if (value_1 < INT_MIN - value_2) {
             return INT_OVERFLOW;
         }
     }
@@ -54,72 +48,64 @@ int addition() {
 
 int subtraction() {
     int value_1, value_2;
-    if (get_value(&value_1)) {
+    if (pop(&value_1)) {
         return STACK_UNDERFLOW;
     }
-    pop();
 
-    if (get_value(&value_2)) {
+    if (pop(&value_2)) {
         push(value_1);
         return STACK_UNDERFLOW;
     }
-    pop();
-    if (value_2 > 0) {
-        if (value_1 <= INT_MIN + value_2) {
+    if (value_1 > 0) {
+        if (value_2 < (INT_MIN + value_1)) {
             return INT_OVERFLOW;
         }
-    } else if (value_2 < 0) {
-        if (value_1 >= INT_MAX + value_2) {
+    } else if (value_1 < 0) {
+        if (value_2 > (INT_MAX + value_1)) {
             return INT_OVERFLOW;
         }
     }
-
-    push(value_2 - value_1);
-    return SUCCESS;
+    return push(value_2 - value_1);
 }
 
 int multiply() {
     int value_1, value_2;
-    if (get_value(&value_1)) { //returns 0 when an error accurs
+    if (pop(&value_1)) { //returns 0 when an error accurs
         return STACK_UNDERFLOW;
     }
-    pop();
-    if (get_value(&value_2)) {//returns 0 when an error accurs
+    if (pop(&value_2)) {//returns 0 when an error accurs
         push(value_1);
         return STACK_UNDERFLOW;
     }
-    pop();
-    if (value_2 == -1 && value_1 == INT_MIN) {
+    if ((value_2 == -1 && value_1 == INT_MIN) || (value_1 == -1 && value_2 == INT_MIN)) {
         return INT_OVERFLOW;
     }
-    if (value_2 == 0 || value_1 <= (INT_MAX / value_2)) {
-        push(value_1 * value_2);
-        return SUCCESS;
+		if ((value_2 == -1 && value_1 == INT_MAX) || (value_1 == -1 && value_2 == INT_MAX)){
+				return push(value_1 * value_2);
+		}
+    if (value_2 == 0 || value_1 <= (INT_MAX / value_2) || value_1 == 0 ) {
+        return push(value_1 * value_2);
     }
     return INT_OVERFLOW;
 }
 
 int division() {
     int divisor, dividend;
-    if (get_value(&divisor)) {
+    if (pop(&divisor)) {
         return STACK_UNDERFLOW;
     }
 
-    pop();
-    if (get_value(&dividend)) {
+    if (pop(&dividend)) {
         push(divisor);
         return STACK_UNDERFLOW;
     }
-
-    pop();
     // Check for division by zero
     if (divisor == 0) {
         return DIVIDE_BY_ZERO;
     } else if (dividend == INT_MIN && divisor == -1) {
         return INT_OVERFLOW;
     }
-    push(dividend / divisor);
-    return SUCCESS;
+    return push(dividend / divisor);
 }
 
 int push_value(int value) {

@@ -9,11 +9,6 @@
  */
 int print_top_value ();
 
-/**
- * @brief  Delete the top value of the stack
- * @return error code 0 if no error
- */
-int pop ();
 
 /**
  * @brief  Push a value on the stack
@@ -35,10 +30,10 @@ int print_stack ();
 void delete_stack ();
 
 /**
- * @brief  Get the top value of the stack
+ * @brief  Get the top value of the stack and delete it
  * @param  stack_value: pointer to the value
  * @return error code 0 if no error
  */
-int get_value(int *stack_value);
+int pop(int *stack_value);
 	
 #endif

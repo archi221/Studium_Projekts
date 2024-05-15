@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#define STRING_SIZE 20
+#define STRING_SIZE 30
 #include <limits.h>
 #include <string.h>
 
@@ -15,18 +15,17 @@ void definitly_not_sprintf(char text_value[], int value) {
 			strcpy(text_value, "-2147483648");
 			return;
 		}
-    if (counter == 0) { //checking if the value is negativ or 0
-        if (value < 0) {
-            is_minus = true;
-            value = value * (-1);
-        } else if (value == 0) {
-            text_value[0] = ' ';
-            text_value[1] = '0';
-            return;
-        } else {
-					is_minus = false;
+//checking if the value is negativ or 0
+       if (value < 0) {
+           is_minus = true;
+           value = value * (-1);
+       } else if (value == 0) {
+           text_value[0] = ' ';
+           text_value[1] = '0';
+           return;
+       } else {
+				is_minus = false;
 				}
-    }
 		while (value != 0) {
 			char c;
       modulo = value % 10;
@@ -47,7 +46,7 @@ void definitly_not_sprintf(char text_value[], int value) {
 				text_value[i] = text_value[counter];
 				text_value[counter] = c;
 				counter--;
-
 					}
+			counter = 0;
        }
    

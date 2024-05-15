@@ -7,12 +7,12 @@
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  C:\Users\timon\Desktop\Studium\GS\ Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h \
-  C:\Users\timon\Desktop\Studium\GS\ Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h \
-  C:\Users\timon\Desktop\Studium\GS\ Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h \
+  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h \
+  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h \
+  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h \
-  C:\Users\timon\Desktop\Studium\GS\ Programme\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h \
+  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stddef.h \

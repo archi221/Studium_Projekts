@@ -1,12 +1,12 @@
 #include "FSM.h"
 
 int pulse_count = 0;
-int last_calculation = 0;
 int fsm_state = ERROR_STATE;
 void (*functions[13])() = {right_rotation, right_rotation, right_rotation, right_rotation,
 													left_rotation, left_rotation, left_rotation, left_rotation,
 													error,
 													no_rotation, no_rotation, no_rotation, no_rotation};
+
 int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{LA, B, RC, ERROR_STATE},
 															{ERROR_STATE, LB, C, RD},
@@ -41,18 +41,18 @@ void error(){
 }
 
 void no_rotation() {
-	check_time(&pulse_count, &last_calculation);
+	check_time(&pulse_count);
 }
 
 void right_rotation() {
 	pulse_count++;
-	check_time(&pulse_count, &last_calculation);
+	check_time(&pulse_count);
 //	set_all_outputs();
 }
 
 void left_rotation() {
 	pulse_count--;
-	check_time(&pulse_count, &last_calculation);
+	check_time(&pulse_count);
 //	set_all_outputs();
 }
 

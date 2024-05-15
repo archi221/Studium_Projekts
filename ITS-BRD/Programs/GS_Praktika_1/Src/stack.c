@@ -17,14 +17,6 @@ int print_top_value() {
     return SUCCESS;
 }
 
-int pop() {
-    if (current_position == 0) {
-        return ERROR;
-    }
-    current_position--;
-    return SUCCESS;
-}
-
 int print_stack() {
 
     if (current_position == 0) {
@@ -52,10 +44,11 @@ void delete_stack(void) {
     current_position = 0;
 }
 
-int get_value(int *stack_value) {
+int pop(int *stack_value) {
     if (current_position == 0) {
         return ERROR;
     }
     *stack_value = stack[current_position - 1];
+		current_position--;
     return SUCCESS;
 }
