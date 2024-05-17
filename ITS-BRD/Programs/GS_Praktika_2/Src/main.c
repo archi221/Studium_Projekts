@@ -24,6 +24,7 @@
 #include "output.h"
 #include "timer.h"
 #include "DisplayOut.h"
+#include "zeitmessung.h"
 
 
 /**
@@ -34,7 +35,7 @@
 int main(void){
 	initITSboard();                 // Initialisierung des ITS Boards
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	initTimer();	// Initialisierung des Timers
+	initZeitmessung();	// Initialisierung des Timers
 	init_display();
 	setValues(2,3);
 	

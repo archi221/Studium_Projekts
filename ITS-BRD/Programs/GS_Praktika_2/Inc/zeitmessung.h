@@ -6,6 +6,7 @@
 #include "LCD_Demos.h"
 #include "stm32f4xx_hal.h"
  
+#define TIME_TO_SEK (1.0/90.0) * 1000
  
 /**
 * Initialisiert den Timer

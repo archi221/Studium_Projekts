@@ -7,6 +7,3 @@
 #include "output.h"
 #include "timer.h"
 
-int time() {
-	initTimer();
-}

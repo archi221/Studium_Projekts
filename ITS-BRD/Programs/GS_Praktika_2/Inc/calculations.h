@@ -3,6 +3,6 @@
 
 int add_rotation();
 
-int check_time(int *pulse_count, int *last_calculation);
+int check_time(int pulse_count);
 
 #endif

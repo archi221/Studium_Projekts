@@ -10,15 +10,12 @@ uint32_t t2;
  
 void initZeitmessung(){
 initTimer();
-}
- 
-double getZeitstempel(){
-	t2 = t1;
-  t1 = getTimeStamp();
-	return t1;
+t1 = getTimeStamp();
 }
  
 double getZeitspanne(){
-	 zeitspanne = (t1 - t2) * (1.0/90.0);
-   return zeitspanne;
+	t2 = t1;
+	t1 = getTimeStamp();
+	zeitspanne = (t1 - t2) * TIME_TO_SEK;
+	return zeitspanne;
 }
