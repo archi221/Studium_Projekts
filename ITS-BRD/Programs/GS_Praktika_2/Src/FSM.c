@@ -20,20 +20,13 @@ int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{LA, B, RB, ERROR_STATE},
 															{ERROR_STATE, LB, C, RD},
 															{RA, ERROR_STATE, LC, D}};
-int start_fsm() {
-	while (true) {
-		set_fsm_state();
-		functions[fsm_state]();
-	}
-}
 
-//check für get_phase --> no rotation yet fehlt noch
+//check for get_phase --> no rotation yet fehlt noch
 int set_fsm_state() {
 	int phase;
-	while (true) {
-		get_phase(&phase);
-		fsm_state = transition_table[fsm_state][phase];
-	}
+    get_phase(&phase);
+    fsm_state = transition_table[fsm_state][phase];
+    functions[fsm_state]();
 }
 
 void error(){
@@ -46,8 +39,15 @@ void no_rotation() {
 
 void right_rotation() {
 	pulse_count++;
+    if (pulse_count >= 1400) {
+        add_rotation();
+        pulse_count = 0;
+    }else if(pulse_count <= -1400) {
+        minus_rotation();
+        pulse_count = 0:
+    }
 	check_time(&pulse_count);
-//	set_all_outputs();
+    set_all_outputs();
 }
 
 void left_rotation() {

@@ -38,8 +38,12 @@ int main(void){
 	initZeitmessung();	// Initialisierung des Timers
 	init_display();
 	setValues(2,3);
-	
+    start_fsm();
 }
-
-
+/super loop
+int start_fsm() {
+    while (true) {
+        set_fsm_state();
+    }
+}
 // EOF
