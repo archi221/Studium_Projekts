@@ -12,6 +12,7 @@ int check_time(int pulse_count) {
         }
         double degrees = pulse_count / TO_DEGREE;
         setValues(degrees, (winkel + (rotations * _360_DEGREES)) / last_calculation);
+        rotations = 0;
     }
 }
 void add_rotation() {
