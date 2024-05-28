@@ -21,12 +21,18 @@ int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{ERROR_STATE, LB, C, RD},
 															{RA, ERROR_STATE, LC, D}};
 
-//check for get_phase --> no rotation yet fehlt noch
+int get_first_phase() {
+	int phase;
+	while (get_phase(&phase)){};
+	fsm_state = transition_table[fsm_state][phase];
+	functions[fsm_state]();
+}
+
 int set_fsm_state() {
 	int phase;
-    get_phase(&phase);
-    fsm_state = transition_table[fsm_state][phase];
-    functions[fsm_state]();
+	get_phase(&phase);
+	fsm_state = transition_table[fsm_state][phase];
+	functions[fsm_state]();
 }
 
 void error(){
@@ -34,7 +40,7 @@ void error(){
 }
 
 void no_rotation() {
-	check_time(&pulse_count);
+	check_time(pulse_count);
 }
 
 void right_rotation() {
@@ -42,18 +48,18 @@ void right_rotation() {
     if (pulse_count >= 1400) {
         add_rotation();
         pulse_count = 0;
-    }else if(pulse_count <= -1400) {
-        minus_rotation();
-        pulse_count = 0:
-    }
-	check_time(&pulse_count);
-    set_all_outputs();
+    } 
+	check_time(pulse_count);
+	set_all_outputs(pulse_count, true);
 }
 
 void left_rotation() {
 	pulse_count--;
-	check_time(&pulse_count);
-//	set_all_outputs();
+		if (pulse_count <= -1400) {
+			add_rotation();
+			pulse_count = 0;
+	check_time(pulse_count);
+	set_all_outputs(pulse_count, false);
 }
 
 

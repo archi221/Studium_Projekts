@@ -69,6 +69,17 @@ int get_error() {
 	return error_t;
 }
 
-int set_all_inputs() {
+int set_all_outputs(int pulse_count, bool direction) {
+	if (direction) {
+		setGPIOPin(GPIOE, 6, false);
+		setGPIOPin(GPIOE, 7, true);
+	}else {
+		setGPIOPin(GPIOE, 7, false);
+		setGPIOPin(GPIOE, 6, true);
+	}
+	//0 - 16 setting bits 16 - 32 resetting bits vom BSRR
+	uint32_t pulse_count_32_bit = (pulse_count & 0xFFU);
+	pulse_count_32_bit = pulse_count_32_bit | (((!pulse_count_32_bit) & 0xFFU) << 16);
+	GPIOD->BSRR = pulse_count_32_bit;
 	return SUCCESS;
 }

@@ -25,6 +25,6 @@ int get_phase(int *phase_value);
 
 int get_error();
 
-int set_all_inputs();
+int set_all_inputs(int pulse_count, bool direction);
 
 #endif 

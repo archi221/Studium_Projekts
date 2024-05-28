@@ -19,6 +19,8 @@
 #include "error_handeling.h"
 #include "calculations.h"
 
+int get_first_phase();
+
 int set_fsm_state();
 
 void error();
