@@ -1,4 +1,12 @@
 #include "output.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "stm32f4xx_hal.h"
+#include "init.h"
+#include "delay.h"
+#include "LCD_GUI.h"
+#include "lcd.h"
+#include "error_handeling.h"
 
 int phase;
 int error_t = 0;
@@ -24,7 +32,7 @@ int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io) {// true if input
 
 int setGPIOPin(GPIO_TypeDef* GPIOx, int pin, bool on) {
 	//check if pin exist
-	if ((pin <= 0) || (pin > 16)) {
+	if ((pin < 0) || (pin > 16)) {
 		return OUT_OF_BOUNDS;
 	}
 	int offset = (on) ? 0 : 16; //offset to acces reset bits
@@ -35,7 +43,7 @@ int setGPIOPin(GPIO_TypeDef* GPIOx, int pin, bool on) {
 
 int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value) {
 	//chekc if pin exist
-	if ((pin <= 0) || (pin > 16)) {
+	if ((pin < 0) || (pin > 16)) {
 		return OUT_OF_BOUNDS;
 	}
 	*pin_value = (0x01 << pin) != (GPIOx->IDR & (0x01 << pin));
@@ -43,14 +51,11 @@ int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value) {
 }
 
 int read_all() {
-	int channel_a, channel_b, error_t;
+	int channel_a, channel_b;
 	if (readGPIOPin(GPIOF, 0, &channel_a)){
 		return OUT_OF_BOUNDS;
 	}
 	if (readGPIOPin(GPIOF, 1, &channel_b)) {
-		return OUT_OF_BOUNDS;
-	}
-	if (readGPIOPin(GPIOF, 6, &error_t)) {
 		return OUT_OF_BOUNDS;
 	}
 	phase = phase_matrix [channel_a][channel_b];
@@ -69,7 +74,7 @@ int get_error() {
 	return error_t;
 }
 
-int set_all_outputs(int pulse_count, bool direction) {
+int set_all(int pulse_count, bool direction) {
 	if (direction) {
 		setGPIOPin(GPIOE, 6, false);
 		setGPIOPin(GPIOE, 7, true);

@@ -12,12 +12,8 @@
 #define ERROR_STATE 8
 #define A 9
 #define B 10
-#define C 11
+#define NC 11
 #define D 12
-
-#include "output.h"
-#include "error_handeling.h"
-#include "calculations.h"
 
 int get_first_phase();
 

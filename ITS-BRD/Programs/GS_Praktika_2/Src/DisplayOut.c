@@ -19,7 +19,10 @@ int init_display(){
 	return SUCCESS;
 	}
 
-
+void	testing(int test) {
+	lcdGotoXY( 0, 3);
+	lcdPrintInt(test);
+}
 
 
 

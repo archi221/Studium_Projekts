@@ -3,11 +3,7 @@
 
 #include <stdio.h>
 #include "stm32f4xx_hal.h"
-#include "init.h"
-#include "delay.h"
-#include "LCD_GUI.h"
-#include "lcd.h"
-#include "error_handeling.h"
+#include <stdbool.h>
 
 #define PHASE_A 0
 #define PHASE_B 1
@@ -25,6 +21,8 @@ int get_phase(int *phase_value);
 
 int get_error();
 
-int set_all_inputs(int pulse_count, bool direction);
+int read_all();
+
+int set_all(int pulse_count, bool direction);
 
 #endif 

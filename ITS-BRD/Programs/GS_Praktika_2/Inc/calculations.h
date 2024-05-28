@@ -1,7 +1,7 @@
 #ifndef __CALCULATIONS__H__
 #define __CALCULATIONS__H__
 
-#define TO_DEGREE 3.888888
+#define TO_DEGREE 3.33333
 #define _360_DEGREES 360
 
 

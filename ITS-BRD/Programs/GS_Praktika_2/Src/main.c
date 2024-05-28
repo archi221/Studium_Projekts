@@ -27,7 +27,7 @@
 #include "zeitmessung.h"
 #include "main.h"
 #include "FSM.h"
-
+#include "output.h"
 
 /**
   * @brief  Main program
@@ -43,6 +43,7 @@ int main(void){
 	get_first_phase();
 	//super loop
 	while (true) {
+			read_all();
 			set_fsm_state();
 	}
 }

@@ -20,6 +20,8 @@
 ".\itsboard\error_handeling.o"
 ".\itsboard\fsm.o"
 ".\itsboard\displayout.o"
+".\itsboard\zeitmessung.o"
+".\itsboard\calculations.o"
 ".\itsboard\font8.o"
 ".\itsboard\font12.o"
 ".\itsboard\font16.o"

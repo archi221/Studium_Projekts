@@ -1,4 +1,7 @@
 #include "FSM.h"
+#include "output.h"
+#include "error_handeling.h"
+#include "calculations.h"
 
 int pulse_count = 0;
 int fsm_state = ERROR_STATE;
@@ -9,21 +12,23 @@ void (*functions[13])() = {right_rotation, right_rotation, right_rotation, right
 
 int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{LA, B, RC, ERROR_STATE},
-															{ERROR_STATE, LB, C, RD},
+															{ERROR_STATE, LB, NC, RD},
 															{RA, ERROR_STATE, LC, D},
 															{RA, ERROR_STATE, LC, D},
-															{ERROR_STATE, LB, C, RD},
+															{ERROR_STATE, LB, NC, RD},
 															{LA, B, RC, ERROR_STATE},
 															{A, RB, ERROR_STATE, LD},
-															{RA, RB, RC, RD},
+															{A, B, NC, D},
 															{A, RB, ERROR_STATE, LC},
 															{LA, B, RB, ERROR_STATE},
-															{ERROR_STATE, LB, C, RD},
+															{ERROR_STATE, LB, NC, RD},
 															{RA, ERROR_STATE, LC, D}};
 
 int get_first_phase() {
 	int phase;
-	while (get_phase(&phase)){};
+	while (get_phase(&phase)){
+		read_all();
+	};
 	fsm_state = transition_table[fsm_state][phase];
 	functions[fsm_state]();
 }
@@ -45,23 +50,20 @@ void no_rotation() {
 
 void right_rotation() {
 	pulse_count++;
-    if (pulse_count >= 1400) {
+    if (pulse_count >= 1200) {
         add_rotation();
         pulse_count = 0;
     } 
 	check_time(pulse_count);
-	set_all_outputs(pulse_count, true);
+	set_all(pulse_count, true);
 }
 
 void left_rotation() {
 	pulse_count--;
-		if (pulse_count <= -1400) {
+		if (pulse_count <= -1200) {
 			add_rotation();
 			pulse_count = 0;
 	check_time(pulse_count);
-	set_all_outputs(pulse_count, false);
+	set_all(pulse_count, false);
+	}
 }
-
-
-
-	

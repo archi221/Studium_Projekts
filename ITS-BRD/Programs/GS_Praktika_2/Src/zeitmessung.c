@@ -2,6 +2,7 @@
 #include "STM32F4xx.h"
 #include "timer.h"
 #include "error_handeling.h"
+#include <stdint.h>
  
  
 double zeitspanne;
@@ -16,6 +17,5 @@ t1 = getTimeStamp();
 double getZeitspanne(){
 	t2 = t1;
 	t1 = getTimeStamp();
-	zeitspanne = (t1 - t2) * TIME_TO_SEK;
-	return zeitspanne;
+	return t1 - t2;
 }

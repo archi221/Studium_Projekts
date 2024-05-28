@@ -1,16 +1,11 @@
-./itsboard/lcd_touch.o: ..\..\DisplayWaveshare\Src\LCD_Touch.c \
-  ..\..\DisplayWaveshare\Inc\LCD_Touch.h \
-  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+./itsboard/zeitmessung.o: Src\zeitmessung.c Inc\zeitmessung.h \
+  ..\..\ITS_BRD_LIB\Inc\init.h ..\..\ITS_BRD_LIB\Inc\lcd.h \
   ..\..\DisplayWaveshare\Inc\LCD_general.h \
   F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  ..\..\DisplayWaveshare\Src\..\IncLocal\LCD_Driver.h \
-  ..\..\DisplayWaveshare\Src\..\IncLocal\LCD_Tools.h \
-  ..\..\DisplayWaveshare\Src\..\IncLocal\LCD_SPI.h \
   ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
   ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
-  ..\..\DisplayWaveshare\Inc\LCD_Debug.h \
-  ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
-  ..\..\DisplayWaveshare\Src\..\IncLocal\LCD_GPIO.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\..\DisplayWaveshare\Inc\LCD_Demos.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -55,5 +50,4 @@
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h \
-  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\math.h
+  ..\..\ITS_BRD_LIB\Inc\timer.h Inc\error_handeling.h
