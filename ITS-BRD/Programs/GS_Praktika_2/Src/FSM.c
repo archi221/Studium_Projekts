@@ -2,6 +2,7 @@
 #include "output.h"
 #include "error_handeling.h"
 #include "calculations.h"
+#include "DisplayOut.h"
 
 int pulse_count = 0;
 int fsm_state = ERROR_STATE;
@@ -20,7 +21,7 @@ int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{A, RB, ERROR_STATE, LD},
 															{A, B, NC, D},
 															{A, RB, ERROR_STATE, LC},
-															{LA, B, RB, ERROR_STATE},
+															{LA, B, RC, ERROR_STATE},
 															{ERROR_STATE, LB, NC, RD},
 															{RA, ERROR_STATE, LC, D}};
 
@@ -41,7 +42,11 @@ int set_fsm_state() {
 }
 
 void error(){
-//	error_state();
+	lcdGotoXY( 0, 3);
+	lcdPrintS("Error Press button 6 to Reset");
+ while(get_error_input()){}
+	 lcdGotoXY( 0, 3);
+	 lcdPrintS("                            ");
 }
 
 void no_rotation() {

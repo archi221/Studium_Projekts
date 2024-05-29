@@ -4,5 +4,6 @@
 #define SUCCESS 0
 #define NO_ROTATION_YET -2
 #define OUT_OF_BOUNDS 21
+#define NOT_PRESSED -1
 
 #endif 

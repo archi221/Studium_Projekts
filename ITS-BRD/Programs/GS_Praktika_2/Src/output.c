@@ -70,8 +70,15 @@ int get_phase(int *phase_value) {
 	return SUCCESS;
 }
 
-int get_error() {
-	return error_t;
+int get_error_input() {
+	int error_button;
+		if (readGPIOPin(GPIOF, 1, &error_button)) {
+		return OUT_OF_BOUNDS;
+	}
+	if (error_button){
+		return SUCCESS;
+	}
+	return NOT_PRESSED;
 }
 
 int set_all(int pulse_count, bool direction) {
@@ -84,7 +91,7 @@ int set_all(int pulse_count, bool direction) {
 	}
 	//0 - 16 setting bits 16 - 32 resetting bits vom BSRR
 	uint32_t pulse_count_32_bit = (pulse_count & 0xFFU);
-	pulse_count_32_bit = pulse_count_32_bit | (((!pulse_count_32_bit) & 0xFFU) << 16);
 	GPIOD->BSRR = pulse_count_32_bit;
+	GPIOD->BSRR = (((!pulse_count_32_bit) & 0xFFU) << 16);
 	return SUCCESS;
 }

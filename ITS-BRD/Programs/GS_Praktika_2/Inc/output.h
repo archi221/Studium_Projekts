@@ -25,4 +25,6 @@ int read_all();
 
 int set_all(int pulse_count, bool direction);
 
+int get_error_input();
+
 #endif 
