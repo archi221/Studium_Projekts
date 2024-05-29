@@ -59,6 +59,8 @@ int read_all() {
 		return OUT_OF_BOUNDS;
 	}
 	phase = phase_matrix [channel_a][channel_b];
+//	lcdGotoXY( 0, 3);
+	lcdPrintInt(phase);
 	return SUCCESS;
 }
 
