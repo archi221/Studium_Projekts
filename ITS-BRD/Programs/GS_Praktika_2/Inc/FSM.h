@@ -1,23 +1,26 @@
 #ifndef FSM_H
 #define	FSM_H
 
-#define RA 0
-#define RB 1
-#define RC 2
-#define RD 3
-#define LD 4
-#define LC 5
-#define LB 6
-#define LA 7
-#define ERROR_STATE 8
-#define A 9
-#define B 10
-#define NC 11
-#define D 12
+typedef enum FSM {
+	RA = 0,
+	RB = 1,
+	RC = 2,
+	RD = 3,
+	LA = 4,
+	LB = 5,
+	LC = 6,
+	LD = 7,
+	ERROR_STATE = 8,
+	A = 9,
+	B = 10,
+	NC = 11,
+	D = 12,
+}FSM;
 
-int get_first_phase();
 
-int set_fsm_state();
+void get_first_phase();
+
+void set_fsm_state();
 
 void error();
 

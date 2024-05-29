@@ -38,12 +38,10 @@ int main(void){
 	initITSboard();                 // Initialisierung des ITS Boards
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	initZeitmessung();	// Initialisierung des Timers
-	init_display();
-	setValues(2,3);
-	get_first_phase();
+	init_display();  // Initialisierung der Dysplay ausgabe
+	get_first_phase();// auf erste phase warten
 	//super loop
 	while (true) {
-			read_all();
 			set_fsm_state();
 	}
 }

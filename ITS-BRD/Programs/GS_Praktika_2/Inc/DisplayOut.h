@@ -9,6 +9,6 @@ void testing(int test);
 
 int init_display();
 
-int setValues(int Winkel,int Winkelgeschwindigkeit);
+int setValues(double Winkel,double Winkelgeschwindigkeit);
 
 #endif 

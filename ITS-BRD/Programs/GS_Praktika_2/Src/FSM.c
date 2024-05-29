@@ -6,8 +6,8 @@
 
 int pulse_count = 0;
 int fsm_state = ERROR_STATE;
-void (*functions[13])() = {right_rotation, right_rotation, right_rotation, right_rotation,
-													left_rotation, left_rotation, left_rotation, left_rotation,
+void (*functions[13])() = {left_rotation, left_rotation, left_rotation, left_rotation,
+													right_rotation, right_rotation, right_rotation, right_rotation,
 													error,
 													no_rotation, no_rotation, no_rotation, no_rotation};
 
@@ -15,17 +15,20 @@ int transition_table[13][4] = {{A, RB, ERROR_STATE, LD},
 															{LA, B, RC, ERROR_STATE},
 															{ERROR_STATE, LB, NC, RD},
 															{RA, ERROR_STATE, LC, D},
-															{RA, ERROR_STATE, LC, D},
-															{ERROR_STATE, LB, NC, RD},
-															{LA, B, RC, ERROR_STATE},
+															
 															{A, RB, ERROR_STATE, LD},
+															{LA, B, RC, ERROR_STATE},
+															{ERROR_STATE, LB, NC, RD},
+															{RA, ERROR_STATE, LC, D},
+															
 															{A, B, NC, D},
-															{A, RB, ERROR_STATE, LC},
+															
+															{A, RB, ERROR_STATE, LD},
 															{LA, B, RC, ERROR_STATE},
 															{ERROR_STATE, LB, NC, RD},
 															{RA, ERROR_STATE, LC, D}};
 
-int get_first_phase() {
+void get_first_phase() {
 	int phase;
 	while (get_phase(&phase)){
 		read_all();
@@ -34,8 +37,9 @@ int get_first_phase() {
 	functions[fsm_state]();
 }
 
-int set_fsm_state() {
+void set_fsm_state() {
 	int phase;
+	read_all();
 	get_phase(&phase);
 	fsm_state = transition_table[fsm_state][phase];
 	functions[fsm_state]();
@@ -55,9 +59,9 @@ void no_rotation() {
 
 void right_rotation() {
 	pulse_count++;
-    if (pulse_count >= 1200) {
-        add_rotation();
-        pulse_count = 0;
+	if (pulse_count >= 1200) {
+			add_rotation();
+			pulse_count = 0;
     } 
 	check_time(pulse_count);
 	set_all(pulse_count, true);
@@ -68,7 +72,7 @@ void left_rotation() {
 		if (pulse_count <= -1200) {
 			add_rotation();
 			pulse_count = 0;
+	}
 	check_time(pulse_count);
 	set_all(pulse_count, false);
-	}
 }

@@ -1,5 +1,6 @@
 #include "DisplayOut.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 
 int init_display(){
 	
@@ -11,11 +12,25 @@ int init_display(){
 	return SUCCESS;
 	}
 
-	int setValues(int Winkel, int Winkelgeschwindigkeit){
-	lcdGotoXY( 12, 1);
-	lcdPrintInt(Winkel);
-	lcdGotoXY( 11, 2);
-	lcdPrintInt(Winkelgeschwindigkeit);
+	int setValues(double Winkel, double Winkelgeschwindigkeit){
+	char buffer1[10] = {0};
+	char buffer2[10] = {0};
+	snprintf(buffer1, 10, "%4.2f", Winkel);
+	snprintf(buffer2, 10, "%4.2f", Winkelgeschwindigkeit);
+	for (int i = 0; 10 > i; i++) {
+		lcdGotoXY( 12 + i, 1);
+		lcdPrintC(buffer1[i]);
+		if (buffer1[i+1] == 0) {
+			break;
+		}
+	}
+	for (int i = 0; 10 > i; i++) {
+		lcdGotoXY( 11 + i, 2);
+		lcdPrintC(buffer2[i]);
+		if (buffer2[i+1] == 0) {
+			break;
+		}
+	}
 	return SUCCESS;
 	}
 

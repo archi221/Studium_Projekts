@@ -5,10 +5,12 @@
 #include "stm32f4xx_hal.h"
 #include <stdbool.h>
 
-#define PHASE_A 0
-#define PHASE_B 1
-#define PHASE_C 2
-#define PHASE_D 3
+typedef enum phasen {
+	PHASE_A = 0,
+	PHASE_B = 1,
+	PHASE_C = 2,
+	PHASE_D = 3,
+}phasen;
 
 
 int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io);
