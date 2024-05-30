@@ -40,6 +40,7 @@ int main(void){
 	initZeitmessung();	// Initialisierung des Timers
 	init_display();  // Initialisierung der Dysplay ausgabe
 	get_first_phase();// auf erste phase warten
+
 	//super loop
 	while (true) {
 			set_fsm_state();

@@ -2,9 +2,9 @@
   ..\..\ITS_BRD_LIB\Inc\init.h ..\..\ITS_BRD_LIB\Inc\error.h \
   ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
   ..\..\DisplayWaveshare\Inc\LCD_general.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\DisplayWaveshare\Inc\LCD_Touch.h \
   ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
@@ -14,15 +14,15 @@
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h \
-  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h \
-  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h \
-  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h \
-  C:\Users\timon\Sudium_Github\Studium_Projekts\ITS-BRD\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h \
+  ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h \
+  ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h \
+  ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  ..\..\stm32cubef4\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stddef.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stddef.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \

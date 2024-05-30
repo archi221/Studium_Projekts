@@ -8,11 +8,11 @@
 #include "lcd.h"
 #include "error_handeling.h"
 
-int phase;
+int phase = NO_ROTATION_YET;
 int error_t = 0;
 
-int phase_matrix[2][2] = {{PHASE_A, PHASE_D},
-													{PHASE_B, PHASE_C}};
+int phase_matrix[2][2] = {{PHASE_D, PHASE_A},
+													{PHASE_C, PHASE_B}};
 
 int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io) {// true if input
 	if ((pin <=0) || (pin >16)) {
@@ -59,13 +59,11 @@ int read_all() {
 		return OUT_OF_BOUNDS;
 	}
 	phase = phase_matrix [channel_a][channel_b];
-//	lcdGotoXY( 0, 3);
-	lcdPrintInt(phase);
 	return SUCCESS;
 }
 
 int get_phase(int *phase_value) {
-	if (phase == NULL) {
+	if (phase == NO_ROTATION_YET) {
 		return NO_ROTATION_YET;
 	}
 	*phase_value = phase;
