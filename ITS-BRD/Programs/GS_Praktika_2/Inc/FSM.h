@@ -20,14 +20,26 @@ typedef enum FSM {
 
 void get_first_phase();
 
-void set_fsm_state();
+void reset_fsm();
 
-void error();
+int set_fsm_state();
 
-void right_rotation();
+int error();
 
-void left_rotation();
+int right_rotation();
 
-void no_rotation();
+int left_rotation();
+
+int no_rotation();
+
+int set_fsm_state_while_print();
+
+int error_while_print();
+
+int right_rotation_while_print();
+
+int left_rotation_while_print();
+
+int no_rotation_while_print();
 
 #endif 

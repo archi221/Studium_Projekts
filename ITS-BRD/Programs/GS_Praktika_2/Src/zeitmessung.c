@@ -17,5 +17,5 @@ t1 = getTimeStamp();
 double getZeitspanne(){
 	t2 = t1;
 	t1 = getTimeStamp();
-	return t1 - t2;
+	return (uint32_t)t1 - t2;
 }

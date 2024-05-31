@@ -9,11 +9,12 @@
 #include "error_handeling.h"
 
 int phase = NO_ROTATION_YET;
-int error_t = 0;
 
 int phase_matrix[2][2] = {{PHASE_D, PHASE_A},
 													{PHASE_C, PHASE_B}};
 
+													
+													
 int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io) {// true if input
 	if ((pin <=0) || (pin >16)) {
 		return OUT_OF_BOUNDS;
@@ -72,10 +73,15 @@ int get_phase(int *phase_value) {
 
 int get_error_input() {
 	int error_button;
-		if (readGPIOPin(GPIOF, 7, &error_button)) {
+	setGPIOPin(GPIOE, 5, true);
+	setGPIOPin(GPIOE, 6, false);
+	setGPIOPin(GPIOE, 7, false);
+	if (readGPIOPin(GPIOF, 6, &error_button)) {
 		return OUT_OF_BOUNDS;
 	}
 	if (error_button){
+		GPIOD->BSRR = (0xFFU << 16);
+		setGPIOPin(GPIOE, 5, false);
 		return SUCCESS;
 	}
 	return NOT_PRESSED;

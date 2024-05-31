@@ -12,6 +12,7 @@ typedef enum phasen {
 	PHASE_D = 3,
 }phasen;
 
+void reset_phase();
 
 int setMODER(GPIO_TypeDef* GPIOx, int pin, bool io);
 

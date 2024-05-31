@@ -28,6 +28,8 @@
 #include "main.h"
 #include "FSM.h"
 #include "output.h"
+#include "calculations.h"
+#include <stdio.h>
 
 /**
   * @brief  Main program
@@ -40,10 +42,19 @@ int main(void){
 	initZeitmessung();	// Initialisierung des Timers
 	init_display();  // Initialisierung der Dysplay ausgabe
 	get_first_phase();// auf erste phase warten
-
 	//super loop
 	while (true) {
-			set_fsm_state();
+			if (set_fsm_state()) {
+				lcdGotoXY( 0, 9);
+				lcdPrintS("Error Press button 6 to Reset");
+				while(get_error_input()){}
+				lcdGotoXY( 0, 9);
+				lcdPrintS("                            ");
+				reset_display();
+				reset_calculations();
+				reset_fsm();
+				get_first_phase();
+			}
 	}
 }
 // EOF

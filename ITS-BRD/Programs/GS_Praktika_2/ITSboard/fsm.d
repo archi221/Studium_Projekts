@@ -49,4 +49,6 @@
   Inc\error_handeling.h Inc\calculations.h Inc\DisplayOut.h \
   ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
   ..\..\DisplayWaveshare\Inc\LCD_general.h \
-  ..\..\stm32cubef4\Utilities\Fonts\fonts.h ..\..\ITS_BRD_LIB\Inc\lcd.h
+  ..\..\stm32cubef4\Utilities\Fonts\fonts.h ..\..\ITS_BRD_LIB\Inc\lcd.h \
+  Inc\zeitmessung.h ..\..\ITS_BRD_LIB\Inc\init.h \
+  ..\..\DisplayWaveshare\Inc\LCD_Demos.h

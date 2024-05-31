@@ -7,8 +7,8 @@
 
 void add_rotation();
 
-void minus_rotation();
+int check_time(int pulse_count);
 
-void check_time(int pulse_count);
+void reset_calculations();
 
 #endif

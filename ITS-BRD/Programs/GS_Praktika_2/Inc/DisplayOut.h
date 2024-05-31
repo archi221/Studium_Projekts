@@ -11,4 +11,6 @@ int init_display();
 
 int setValues(double Winkel,double Winkelgeschwindigkeit);
 
+void reset_display();
+
 #endif 

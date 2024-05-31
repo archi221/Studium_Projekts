@@ -52,4 +52,5 @@
   F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\ITS_BRD_LIB\Inc\lcd.h Inc\output.h ..\..\ITS_BRD_LIB\Inc\timer.h \
   Inc\DisplayOut.h Inc\error_handeling.h Inc\zeitmessung.h \
-  ..\..\DisplayWaveshare\Inc\LCD_Demos.h Src\main.h Inc\FSM.h
+  ..\..\DisplayWaveshare\Inc\LCD_Demos.h Src\main.h Inc\FSM.h \
+  Inc\calculations.h
