@@ -9,15 +9,15 @@ void get_BM_file_header() {
     ERR_HANDLER(true != COMread((char *) &BITMAPINFOHEADER,
                                 sizeof(BITMAPFILEHEADER), 1),
                 "readFileHeaders: Error during read.");
-    ERR_HANDLER(fileHeader != NULL, "readFileHeaders: Nullpointer");
+    ERR_HANDLER(&BITMAPFILEHEADER != NULL, "readFileHeaders: Nullpointer");
 }
 
 void get_BM_info_header() {
     ERR_HANDLER(true != COMread((char *) &BITMAPFILEHEADER,
                                 sizeof(BITMAPINFOHEADER), 1),
                 "readInfoHeader: Error during read.");
-    ERR_HANDLER(info_header != NULL, "readInfoHeader: Nullpointer");
-    ERR_HANDLER(&BITMAPFILEHEADER->bfOffBits == sizeof(file_header) + sizeof(info_header),
+    ERR_HANDLER(&BITMAPFILEHEADER != NULL, "readInfoHeader: Nullpointer");
+    ERR_HANDLER(*BITMAPFILEHEADER->bfOffBits == sizeof(file_header) + sizeof(info_header),
                 "readInfoHeader: wrong offsett");
 }
 
