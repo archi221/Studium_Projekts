@@ -10,7 +10,7 @@
       <TargetName>ITSboard</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
+      <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -696,6 +696,21 @@
               <FileType>1</FileType>
               <FilePath>./Src/main.c</FilePath>
             </File>
+            <File>
+              <FileName>errorhandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\errorhandler.c</FilePath>
+            </File>
+            <File>
+              <FileName>perfTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\perfTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>input_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\input_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1221,6 +1236,31 @@
               <FileName>lcd.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\ITS_BRD_LIB\Inc\lcd.h</FilePath>
+            </File>
+            <File>
+              <FileName>BMP_types.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\BMP_types.h</FilePath>
+            </File>
+            <File>
+              <FileName>errorhandler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\errorhandler.h</FilePath>
+            </File>
+            <File>
+              <FileName>input.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\input.h</FilePath>
+            </File>
+            <File>
+              <FileName>perfTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\perfTimer.h</FilePath>
+            </File>
+            <File>
+              <FileName>input_wrapper.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\input_wrapper.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2067,6 +2107,21 @@
               <FileType>1</FileType>
               <FilePath>./Src/main.c</FilePath>
             </File>
+            <File>
+              <FileName>errorhandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\errorhandler.c</FilePath>
+            </File>
+            <File>
+              <FileName>perfTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\perfTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>input_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\input_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2592,6 +2647,31 @@
               <FileName>lcd.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\ITS_BRD_LIB\Inc\lcd.h</FilePath>
+            </File>
+            <File>
+              <FileName>BMP_types.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\BMP_types.h</FilePath>
+            </File>
+            <File>
+              <FileName>errorhandler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\errorhandler.h</FilePath>
+            </File>
+            <File>
+              <FileName>input.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\input.h</FilePath>
+            </File>
+            <File>
+              <FileName>perfTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\perfTimer.h</FilePath>
+            </File>
+            <File>
+              <FileName>input_wrapper.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\input_wrapper.h</FilePath>
             </File>
           </Files>
         </Group>

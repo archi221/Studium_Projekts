@@ -3,8 +3,14 @@
 #include <stdbool.h>
 #include "errorhandler.h"
 #include "input.h"
+#include "BMP_types.h"
+
+void get_next_line(void (*func)(char *a, bool compressed)) {
+	func(NULL, true);
+}
 
 void get_BM_file_header() {
+	get_next_line(&get_next_line_24compressed);
     openNextFile();
     //testen wie man auf die structs zugreifen musst
     ERR_HANDLER(true != COMread((char *) &BITMAPINFOHEADER,
@@ -30,7 +36,7 @@ void get_BT_palette(struct tagRGBQUAD palette[]) {
 
 void get_next_line_8compressed(char *line, bool compressed) {
     if (compressed) {
-        decompress_line(line)
+        decompress_line(line);
     }
 }
 
