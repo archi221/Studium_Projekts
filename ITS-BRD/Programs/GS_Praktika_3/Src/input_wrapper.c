@@ -6,6 +6,7 @@
 
 void get_BM_file_header() {
     openNextFile();
+    //testen wie man auf die structs zugreifen musst
     ERR_HANDLER(true != COMread((char *) &BITMAPINFOHEADER,
                                 sizeof(BITMAPFILEHEADER), 1),
                 "readFileHeaders: Error during read.");
