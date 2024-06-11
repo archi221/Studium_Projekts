@@ -27,40 +27,15 @@ Project File Date:  06/11/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'F:\Program Files\Keil\ARM\ARMCLANG\Bin'
 Build target 'ITSboard'
-Src/input_wrapper.c(19): warning: unused parameter 'line' [-Wunused-parameter]
-void get_next_line_24compressed(char *line, bool compressed) {
-                                      ^
-Src/input_wrapper.c(23): warning: unused parameter 'line' [-Wunused-parameter]
+compiling main.c...
+Src/input_wrapper.c(59): warning: unused parameter 'line' [-Wunused-parameter]
 void decompress_line(char *line) {
                            ^
-Src/input_wrapper.c(7): warning: unused variable 'get_next_line' [-Wunused-variable]
-static void (*get_next_line) (char *a, bool compressed) = NULL;
-              ^
-3 warnings generated.
+1 warning generated.
 compiling input_wrapper.c...
-Src/test.c(6): error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
-get_BM_info_header();
-^
-int
-Src/test.c(7): error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
-initPerfTimers();
-^
-int
-Src/test.c(7): error: conflicting types for 'initPerfTimers'
-./Inc\perfTimer.h(4): note: previous declaration is here
-void initPerfTimers(void);
-     ^
-Src/test.c(8): error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
-initInput();
-^
-int
-Src/test.c(8): error: conflicting types for 'initInput'
-./Inc\input.h(9): note: previous declaration is here
-extern void initInput(void);
-            ^
-5 errors generated.
-compiling test.c...
-".\ITSboard\ITSboard.axf" - 5 Error(s), 3 Warning(s).
+linking...
+Program Size: Code=16782 RO-data=1058 RW-data=64 ZI-data=1248  
+".\ITSboard\ITSboard.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -83,8 +58,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

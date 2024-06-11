@@ -5,15 +5,17 @@
 #include "stdbool.h"
 #include "input.h"
 
-get_next_line_24(char *line, bool compressed);
+#define LCD_BREITE 480
 
-get_next_line_8(char *line, bool compressed);
+void get_next_line_24(RGBTRIPLE *line);
 
-get_next_line_(char *line, bool compressed);
+void get_next_line_8(RGBTRIPLE *line);
+
+void get_next_line_(RGBTRIPLE *line);
 
 void get_BT_palette(struct tagRGBQUAD[]);
 
-void decompress_line(char *line);
+void decompress_line(RGBTRIPLE *line);
 
 void init_next_picture();
 

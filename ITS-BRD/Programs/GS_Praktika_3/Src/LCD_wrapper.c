@@ -1,0 +1,27 @@
+#include "input_wrapper.h"
+#include "LCD_GUI.h"
+#include "LCD_wrapper.h"
+#include <stdint.h>
+
+static RGBTRIPLE line[LCD_BREITE];//nur bis 480 pixel breite
+
+static Coordinate starting_point;
+
+starting_point.x = 0;
+
+void wrap_line() {
+    int width = get_width();
+    for (int i = get_height(); i > 0; --i) {
+        uint16_t LCD_line_COLORS[width];
+        get_next_line_(line);
+        for (int j = 0; j < width; ++j) {
+            LCD_line_COLORS[j] |= ((double) line[j].rgbtRed / TO_4_BIT) << 11;
+            LCD_line_COLORS[j] &= 0xF800;
+            LCD_line_COLORS[j] |= ((double) line[j].rgbtGreen / TO_5_BIT) << 5;
+            LCD_line_COLORS[j] &= 0xFFE0;
+            LCD_line_COLORS[j] |= (double) line[j].rgbtBlue / TO_4_BIT;
+        }
+        starting_point.y = i;
+        GUI_WriteLine(starting_point, width, LCD_line_COLORS);
+    }
+}
