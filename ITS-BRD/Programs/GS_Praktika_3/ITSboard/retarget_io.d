@@ -1,8 +1,8 @@
 ./itsboard/retarget_io.o: ..\..\ITS_BRD_LIB\Src\retarget_io.c \
-  C:\Keil_v5\ARM\ARMCLANG\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\assert.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\rt_sys.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\string.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\assert.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\rt_sys.h \
   RTE\_ITSboard\RTE_Components.h ..\..\ITS_BRD_LIB\Inc\ITS_BRD_conf.h

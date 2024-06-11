@@ -1,17 +1,21 @@
-#ifndef _INPUT_H
-#define _INPUT_H
+#ifndef _INPUT_WRAPPER_H
+#define _INPUT_WRAPPER_H
 
 #include "BMP_types.h"
 #include "stdbool.h"
+#include "input.h"
 
-void get_BM_file_header();
+get_next_line_24(char *line, bool compressed);
 
-void get_BM_info_header();
+get_next_line_8(char *line, bool compressed);
+
+get_next_line_(char *line, bool compressed);
 
 void get_BT_palette(struct tagRGBQUAD[]);
 
-void get_next_line(void (*func)(char *a, bool compressed));
-
 void decompress_line(char *line);
 
+void init_next_picture();
+
+void read_palette();
 #endif

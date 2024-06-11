@@ -1,47 +1,46 @@
 #include "input_wrapper.h"
-#include <stdio.h>
-#include <stdbool.h>
+#include "headers.h"
 #include "errorhandler.h"
-#include "input.h"
-#include "BMP_types.h"
+#include <stdlib.h>
+#include "headers.h"
 
-void get_next_line(void (*func)(char *a, bool compressed)) {
-	func(NULL, true);
-}
+static void (*get_next_line)(char *a, bool is_compressed) = NULL;
 
-void get_BM_file_header() {
-	get_next_line(&get_next_line_24compressed);
+static RGBQUAD[256] pallete;
+
+static bool is_compressed;
+
+static int width;
+
+void init_next_picture() {
+    BITMAPINFOHEADER infoheader;
     openNextFile();
-    //testen wie man auf die structs zugreifen musst
-    ERR_HANDLER(true != COMread((char *) &BITMAPINFOHEADER,
-                                sizeof(BITMAPFILEHEADER), 1),
-                "readFileHeaders: Error during read.");
-    ERR_HANDLER(&BITMAPFILEHEADER != NULL, "readFileHeaders: Nullpointer");
+    readHeaders();
+    getInfoHeader(&infoheader)
+    infoheader.biWidth = width;
+    if (infoheader.biBitCount == 8) {
+        get_next_line = get_next_line_8;
+        ERR_HANDLER(1 != COMread((char *) palette, sizeof(pallete) , 1),
+                    "readInfoHeader: Error during read.");
+    } else if (infoheader.biBitCount == 24) {
+        get_next_line = get_next_line_24;
+    } else {
+        ERR_HANDLER(true, "biBitCount: format not implemented");
+    }
+    ERR_HANDLER(0 < infoheader.biCompression > 1,
+                "biCompression: format not implemented");
+    is_compressed = infoheader.biCompression ? true : false;
 }
 
-void get_BM_info_header() {
-    ERR_HANDLER(true != COMread((char *) &BITMAPFILEHEADER,
-                                sizeof(BITMAPINFOHEADER), 1),
-                "readInfoHeader: Error during read.");
-    ERR_HANDLER(&BITMAPFILEHEADER != NULL, "readInfoHeader: Nullpointer");
-    ERR_HANDLER(*BITMAPFILEHEADER->bfOffBits == sizeof(file_header) + sizeof(info_header),
-                "readInfoHeader: wrong offsett");
-}
-
-void get_BT_palette(struct tagRGBQUAD palette[]) {
-    ERR_HANDLER(true != COMread((char *) palette,
-                                sizeof(RGBQUAD) * 266, 1),
-                "readInfoHeader: Error during read.");
-}
-
-void get_next_line_8compressed(char *line, bool compressed) {
-    if (compressed) {
+void get_next_line_8(char *line, bool compressed) {
+    if (is_compressed) {
         decompress_line(line);
     }
 }
 
-void get_next_line_24compressed(char *line, bool compressed) {
-    ERR_HANDLER(compressed, "wrong format for compressed flag in InfoHeader")
+void get_next_line_24(char *line, bool is_compressed) {
+    ERR_HANDLER(is_compressed, "wrong format for compressed flag in InfoHeader");
+    
 }
 
 void decompress_line(char *line) {

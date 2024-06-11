@@ -1,5 +1,6 @@
 ./itsboard/input_wrapper.o: Src\input_wrapper.c Inc\input_wrapper.h \
-  Inc\BMP_types.h C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h Inc\errorhandler.h \
-  Inc\input.h
+  Inc\BMP_types.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  Inc\input.h Inc\headers.h Inc\errorhandler.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdlib.h

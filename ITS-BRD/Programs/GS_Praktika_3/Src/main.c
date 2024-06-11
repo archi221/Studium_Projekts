@@ -25,6 +25,7 @@
 #include "fontsFLASH.h"
 #include "LCD_Touch.h"
 #include "error.h"
+#include "input.h"
 
 /**
   * @brief  Main program
@@ -39,11 +40,10 @@ int main(void){
 	    // Ueberpruefe Version der Fonts im Flash passt nicht zur Software Version
 		Error_Handler();
 	}
-	
+
 	lcdPrintS("Viel Spass mit dem ITS Board.");
 	printf("Viel Spass mit dem ITS Board.\r\n");
 	delay(3000);
-	
 	// Demo Drawing Board
 	TP_Dialog();//initialize the drawing board
 	while (1) { 
