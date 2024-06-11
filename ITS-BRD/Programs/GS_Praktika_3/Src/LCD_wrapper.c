@@ -2,6 +2,7 @@
 #include "LCD_GUI.h"
 #include "LCD_wrapper.h"
 #include <stdint.h>
+#include "errorhandler.h"
 
 static RGBTRIPLE line[LCD_BREITE];//nur bis 480 pixel breite
 
@@ -22,6 +23,10 @@ void wrap_line() {
             LCD_line_COLORS[j] |= (double) line[j].rgbtBlue / TO_4_BIT;
         }
         starting_point.y = i;
+        ERR_HANDLER((LCD_HÖHE < starting_point.y) && (starting_point.y > LCD_BREITE),
+                    "starting_point: außerhalb des displays")
+        ERR_HANDLER(width == sizeof(LCD_line_COLORS) / sizeof(uint16_t),
+                    "LCD_line_COLORS: hat eine falsche größe")
         GUI_WriteLine(starting_point, width, LCD_line_COLORS);
     }
 }

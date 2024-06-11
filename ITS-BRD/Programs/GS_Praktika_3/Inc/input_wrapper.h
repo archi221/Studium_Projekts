@@ -6,6 +6,7 @@
 #include "input.h"
 
 #define LCD_BREITE 480
+#define LCD_HÖHE 380
 
 void get_next_line_24(RGBTRIPLE *line);
 
