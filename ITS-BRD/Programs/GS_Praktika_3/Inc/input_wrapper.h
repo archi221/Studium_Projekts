@@ -18,4 +18,9 @@ void decompress_line(char *line);
 void init_next_picture();
 
 void read_palette();
+
+int get_width();
+
+int get_height();
+
 #endif

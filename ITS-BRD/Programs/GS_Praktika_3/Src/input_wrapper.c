@@ -12,12 +12,15 @@ static bool is_compressed;
 
 static int width;
 
+static int height;
+
 void init_next_picture() {
     BITMAPINFOHEADER infoheader;
     openNextFile();
     readHeaders();
     getInfoHeader(&infoheader)
     infoheader.biWidth = width;
+    infoheader.biHeight = hight;
     if (infoheader.biBitCount == 8) {
         get_next_line = get_next_line_8;
         ERR_HANDLER(1 != COMread((char *) palette, sizeof(pallete) , 1),
@@ -39,8 +42,18 @@ void get_next_line_8(char *line, bool compressed) {
 }
 
 void get_next_line_24(char *line, bool is_compressed) {
-    ERR_HANDLER(is_compressed, "wrong format for compressed flag in InfoHeader");
-    
+    ERR_HANDLER(is_compressed,
+                "wrong format for compressed flag in InfoHeader");
+    ERR_HANDLER(1 != COMread((char *) line, width * sizeof(RGBTRIPLE) , 1),
+                "get_next_line: Error during read.");
+}
+
+int get_width() {
+    return width;
+}
+
+int get_height() {
+    return height;
 }
 
 void decompress_line(char *line) {
