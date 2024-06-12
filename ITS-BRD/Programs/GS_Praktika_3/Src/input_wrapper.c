@@ -4,8 +4,9 @@
 #include <stdlib.h>
 #include "headers.h"
 #include <stdio.h>
+#include <stdint.h>
 
-static void (*get_next_line)(RGBTRIPLE *line ) = NULL;
+void (*get_next_line)(RGBTRIPLE *line ) = NULL;
 
 static RGBQUAD pallete[256];
 
@@ -45,7 +46,7 @@ void init_next_picture() {
 			if (infoheader.biCompression) {
 					get_next_line = get_next_line_8_pressed;
 			}else {
-					ERR_HANDLER(1 != COMread((char *) pallete, sizeof(pallete), 1),
+					ERR_HANDLER(1 != COMread((char *) pallete, sizeof(RGBQUAD) * infoheader.biBitCount, 1),
 											"readInfoHeader: Error during pallete read.");
 					get_next_line = get_next_line_8;
 					padding = (((infoheader.biWidth) * 8 + 31) / 32) * 4;
@@ -82,12 +83,13 @@ void get_next_line_8(RGBTRIPLE *line) {
 }
 
 void get_next_line_8_pressed(RGBTRIPLE *line) {
-	unsigned char *pressed_pixel = malloc(2 * sizeof(unsigned char));
+	unsigned char *pressed_pixel = malloc(2 * sizeof(uint8_t));
 	int counter = 0;
-	ERR_HANDLER(1 != COMread((char *) pressed_pixel, 2 * sizeof(unsigned char), 1),
+	ERR_HANDLER(1 != COMread((char *) &pressed_pixel, 2 * sizeof(unsigned char), 1),
 							"get_next_line: Error during read.");
-	while (pressed_pixel[0] + pressed_pixel[1] != 0 ||
-				pressed_pixel[0] + pressed_pixel[1] != 1) {
+	while (((pressed_pixel[0] + pressed_pixel[1]) != 0) ||
+				(pressed_pixel[0] + pressed_pixel[1]) != 1) {
+					counter = pressed_pixel[0] + pressed_pixel[1];
 		for (int i = 0; i < pressed_pixel[0]; i++) {
 			if (counter < width){
 				line[counter].rgbtBlue = pallete[pressed_pixel[1]].rgbBlue;
@@ -96,7 +98,7 @@ void get_next_line_8_pressed(RGBTRIPLE *line) {
 			}
 			counter++;
 		}
-			ERR_HANDLER(1 != COMread((char *) pressed_pixel, 2 * sizeof(unsigned char), 1),
+			ERR_HANDLER(1 != COMread((char *) &pressed_pixel, 2 * sizeof(unsigned char), 1),
 									"get_next_line: Error during read.");
 	}
 	ERR_HANDLER(counter < width, "get_next_line: Error line to short for header.");

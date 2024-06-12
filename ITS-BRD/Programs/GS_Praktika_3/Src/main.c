@@ -27,6 +27,8 @@
 #include "error.h"
 #include "input.h"
 #include "input_wrapper.h"
+#include "LCD_wrapper.h"
+#include "input_pin.h"
 
 /**
   * @brief  Main program
@@ -39,10 +41,13 @@ int main(void){
 	initInput();
 	while (true) {
 		init_next_picture();
-		for (int i = 0; get_height() > i; i++) {
-			
+		wrap_line();
+		int next_picture;
+do {
+	readGPIOPin(GPIOF, 0, &next_picture);
+}while(!next_picture);
 		}
 	}
-}
+
 
 // EOF

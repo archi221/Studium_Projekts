@@ -20,6 +20,8 @@
 ".\itsboard\headers.o"
 ".\itsboard\input.o"
 ".\itsboard\input_wrapper.o"
+".\itsboard\lcd_wrapper.o"
+".\itsboard\input_pin.o"
 ".\itsboard\font8.o"
 ".\itsboard\font12.o"
 ".\itsboard\font16.o"

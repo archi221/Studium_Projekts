@@ -11,5 +11,6 @@
 
 void wrap_line();
 
+void* get_line_adress();
 
 #endif
