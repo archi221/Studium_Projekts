@@ -12,6 +12,8 @@ void get_next_line_24(RGBTRIPLE *line);
 
 void get_next_line_8(RGBTRIPLE *line);
 
+void get_next_line_8_pressed(RGBTRIPLE *line);
+
 void get_next_line_(RGBTRIPLE *line);
 
 void get_BT_palette(struct tagRGBQUAD[]);
