@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "FSM.h"
+#include "output.h"
 
 static char letzter_winkel[8] = {0};
 static char letzte_winkelgeschwindigkeit[8] = {0};
@@ -13,46 +14,49 @@ int init_display(){
 	lcdGotoXY( 0, 2);
  	lcdPrintS("Winkelgeschwindigkeit:");
 	reset_display();
-	return SUCCESS;
+	return ALLES_GUT;
 }
 
 int setValues(double Winkel, double Winkelgeschwindigkeit) {
-char winkel[8] = {0};
-char winkelgeschwindigkeit[8] = {0};
-int errno = 0;
-snprintf(winkel, 7, "%3.1f", Winkel);
-snprintf(winkelgeschwindigkeit, 7, "%3.1f", Winkelgeschwindigkeit);
-for (int i = 0; 5 > i; i++) {
-	if (winkel[i] != letzter_winkel[i]) {
-		lcdGotoXY( 12 + i, 1);
-		if (winkel[i] == 0) {
-			lcdPrintC('0');
-			letzter_winkel[i] = '0';
-		}else {
-			lcdPrintC(winkel[i]);
-			letzter_winkel[i] = winkel[i];
-		}
-		if (!errno){
-			errno = set_fsm_state_while_print();
-		}
-	}
-}
-for (int i = 0; 5 > i; i++) {
-	if (winkelgeschwindigkeit[i] != letzte_winkelgeschwindigkeit[i]) {
-		lcdGotoXY( 23 + i, 2);
-		if (winkelgeschwindigkeit[i] == 0) {
-			lcdPrintC('0');
-			letzte_winkelgeschwindigkeit[i] = '0';
-		}else {
-			lcdPrintC(winkelgeschwindigkeit[i]);
-			letzte_winkelgeschwindigkeit[i] = winkelgeschwindigkeit[i];
-		}
-		if (!errno){
-			errno = set_fsm_state_while_print();
+	
+	setGPIOPin(GPIOE, 1, true);	
+	char winkel[8] = {0};
+	char winkelgeschwindigkeit[8] = {0};
+	int errno = 0;
+	snprintf(winkel, 7, "%3.1f", Winkel);
+	snprintf(winkelgeschwindigkeit, 7, "%3.1f", Winkelgeschwindigkeit);
+	for (int i = 0; 5 > i; i++) {
+		if (winkel[i] != letzter_winkel[i]) {
+			lcdGotoXY( 12 + i, 1);
+			if (winkel[i] == 0) {
+				lcdPrintC('0');
+				letzter_winkel[i] = '0';
+			}else {
+				lcdPrintC(winkel[i]);
+				letzter_winkel[i] = winkel[i];
+			}
+			if (!errno){
+				errno = set_fsm_state_while_print();
+			}
 		}
 	}
-}
-return errno;
+	for (int i = 0; 5 > i; i++) {
+		if (winkelgeschwindigkeit[i] != letzte_winkelgeschwindigkeit[i]) {
+			lcdGotoXY( 23 + i, 2);
+			if (winkelgeschwindigkeit[i] == 0) {
+				lcdPrintC('0');
+				letzte_winkelgeschwindigkeit[i] = '0';
+			}else {
+				lcdPrintC(winkelgeschwindigkeit[i]);
+				letzte_winkelgeschwindigkeit[i] = winkelgeschwindigkeit[i];
+			}
+			if (!errno){
+				errno = set_fsm_state_while_print();
+			}
+		}
+	}
+	setGPIOPin(GPIOE, 1, false);	
+	return errno;
 }
 
 void reset_display() {

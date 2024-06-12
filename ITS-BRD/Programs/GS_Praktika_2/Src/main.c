@@ -44,6 +44,7 @@ int main(void){
 	get_first_phase();// auf erste phase warten
 	//super loop
 	while (true) {
+		setGPIOPin(GPIOE, 0, true);
 			if (set_fsm_state()) {
 				lcdGotoXY( 0, 9);
 				lcdPrintS("Error Press button 6 to Reset");
@@ -55,6 +56,7 @@ int main(void){
 				reset_fsm();
 				get_first_phase();
 			}
+		setGPIOPin(GPIOE, 0, false);	
 	}
 }
 // EOF

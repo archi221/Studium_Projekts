@@ -45,19 +45,19 @@ void init_next_picture() {
 			if (infoheader.biCompression) {
 					get_next_line = get_next_line_8_pressed;
 			}else {
+					ERR_HANDLER(1 != COMread((char *) pallete, sizeof(pallete), 1),
+											"readInfoHeader: Error during pallete read.");
 					get_next_line = get_next_line_8;
+					padding = (((infoheader.biWidth) * 8 + 31) / 32) * 4;
 			}
-        ERR_HANDLER(1 != COMread((char *) pallete, sizeof(pallete), 1),
-                    "readInfoHeader: Error during pallete read.");
-        padding = (((infoheader.biWidth) * 8 + 31) / 32) * 4;
     } else if (bit_count == 24) {
 				if (infoheader.biCompression) {
 			ERR_HANDLER((true),
 							"biCompression: format not implemented for this formatt");
 			}else {
 					get_next_line = get_next_line_24;
+				  padding = (((infoheader.biWidth) * 24 + 31) / 32) * 4;
 			}
-        padding = (((infoheader.biWidth) * 24 + 31) / 32) * 4;
     } else {
         ERR_HANDLER(true, "biBitCount: format not implemented");
     }
@@ -100,11 +100,11 @@ void get_next_line_8_pressed(RGBTRIPLE *line) {
 									"get_next_line: Error during read.");
 	}
 	ERR_HANDLER(counter < width, "get_next_line: Error line to short for header.");
+	free(pressed_pixel);
 }
 
 void get_next_line_24(RGBTRIPLE *line) {
-	//malloc
-    char *buffer = malloc((add_width + padding) * bit_count);
+    unsigned char *buffer = malloc((add_width + padding) * bit_count);
     ERR_HANDLER(is_compressed,
                 "wrong format for compressed flag in InfoHeader");
     ERR_HANDLER(1 != COMread((char *) line, width * sizeof(RGBTRIPLE), 1),
@@ -112,7 +112,6 @@ void get_next_line_24(RGBTRIPLE *line) {
     ERR_HANDLER(1 != COMread((char *) buffer, padding + add_width, 1),
                 "get_next_line: Error during read.");
 		free(buffer);  
-		//add adjustmend for padding
 }
 
 int get_width() {
@@ -121,8 +120,4 @@ int get_width() {
 
 int get_height() {
     return height;
-}
-
-void decompress_line(char *line) {
-
 }

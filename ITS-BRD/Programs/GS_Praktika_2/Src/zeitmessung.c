@@ -3,7 +3,7 @@
 #include "timer.h"
 #include "error_handeling.h"
 #include <stdint.h>
- 
+#include <limits.h>
  
 double zeitspanne;
 uint32_t t1;
@@ -17,5 +17,5 @@ t1 = getTimeStamp();
 double getZeitspanne(){
 	t2 = t1;
 	t1 = getTimeStamp();
-	return (uint32_t)t1 - t2;
+	return t1 - t2;
 }

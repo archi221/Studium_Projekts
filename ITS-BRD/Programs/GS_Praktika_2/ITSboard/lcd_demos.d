@@ -2,9 +2,9 @@
   ..\..\DisplayWaveshare\Inc\LCD_Demos.h \
   ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
   ..\..\DisplayWaveshare\Inc\LCD_general.h \
-  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
   ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
-  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h \
   ..\..\DisplayWaveshare\Inc\LCD_Touch.h \
   ..\..\DisplayWaveshare\Inc\LCD_Debug.h \
   ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
