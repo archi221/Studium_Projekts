@@ -1,4 +1,5 @@
 ./itsboard/headers.o: Src\headers.c Inc\headers.h Inc\BMP_types.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdint.h Inc\errorhandler.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h Inc\input.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  Inc\errorhandler.h \
+  F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  Inc\input.h F:\Program\ Files\Keil\ARM\ARMCLANG\Bin\..\include\stdlib.h

@@ -10,6 +10,11 @@ void (*get_next_line)(RGBTRIPLE *line ) = NULL;
 
 static RGBQUAD pallete[256];
 
+static RGBTRIPLE farbe;
+
+static unsigned char amount;
+static unsigned char color;
+
 static bool is_compressed;
 
 static int width;
@@ -66,51 +71,59 @@ void init_next_picture() {
 
 void get_next_line_8(RGBTRIPLE *line) {
 	unsigned char *buffer = malloc((add_width + padding) * bit_count);
-	unsigned char *pt_pallete = malloc(sizeof(unsigned char) * width);
 	ERR_HANDLER(is_compressed,
 							"wrong format for compressed flag in InfoHeader");
-	ERR_HANDLER(1 != COMread((char *) pt_pallete, width * sizeof(unsigned char), 1),
-							"get_next_line: Error during read.");
-	ERR_HANDLER(1 != COMread((char *) buffer, padding + add_width, 1),
-							"get_next_line: Error during read.");
+
 	for (int i = 0; i < width; i++) {
-		line[i].rgbtBlue = pallete[pt_pallete[i]].rgbBlue;
-		line[i].rgbtGreen = pallete[pt_pallete[i]].rgbGreen;
-		line[i].rgbtRed = pallete[pt_pallete[i]].rgbRed;
+		ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
+				"get_next_line: Error during read.");
+		line[i].rgbtBlue = pallete[color].rgbBlue;
+		line[i].rgbtGreen = pallete[color].rgbGreen;
+		line[i].rgbtRed = pallete[color].rgbRed;
+
 	}
+	ERR_HANDLER(1 != COMread((char *) buffer, padding + add_width, 1),
+						"get_next_line: Error during read.");
 	free(buffer);
-	free(pt_pallete);
 }
 
 void get_next_line_8_pressed(RGBTRIPLE *line) {
-	unsigned char *pressed_pixel = malloc(2 * sizeof(uint8_t));
 	int counter = 0;
-	ERR_HANDLER(1 != COMread((char *) &pressed_pixel, 2 * sizeof(unsigned char), 1),
-							"get_next_line: Error during read.");
-	while (((pressed_pixel[0] + pressed_pixel[1]) != 0) ||
-				(pressed_pixel[0] + pressed_pixel[1]) != 1) {
-					counter = pressed_pixel[0] + pressed_pixel[1];
-		for (int i = 0; i < pressed_pixel[0]; i++) {
+	
+	ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
+							"get_next_line amount: Error during read.");
+	ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
+							"get_next_line color: Error during read.");
+	while (!(((amount == 0) && (color == 0)) ||
+				((amount == 0) && (color == 1)))) {
+					
+		for (int i = 0; i < amount; i++) {
 			if (counter < width){
-				line[counter].rgbtBlue = pallete[pressed_pixel[1]].rgbBlue;
-				line[counter].rgbtGreen = pallete[pressed_pixel[1]].rgbGreen;
-				line[counter].rgbtRed = pallete[pressed_pixel[1]].rgbRed;
+				line[counter].rgbtBlue = pallete[color].rgbBlue;
+				line[counter].rgbtGreen = pallete[color].rgbGreen;
+				line[counter].rgbtRed = pallete[color].rgbRed;
 			}
 			counter++;
 		}
-			ERR_HANDLER(1 != COMread((char *) &pressed_pixel, 2 * sizeof(unsigned char), 1),
-									"get_next_line: Error during read.");
+		ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
+							"get_next_line amount: Error during read.");
+		ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
+							"get_next_line color: Error during read.");
 	}
 	ERR_HANDLER(counter < width, "get_next_line: Error line to short for header.");
-	free(pressed_pixel);
 }
 
 void get_next_line_24(RGBTRIPLE *line) {
-    unsigned char *buffer = malloc((add_width + padding) * bit_count);
-    ERR_HANDLER(is_compressed,
+	    ERR_HANDLER(is_compressed,
                 "wrong format for compressed flag in InfoHeader");
-    ERR_HANDLER(1 != COMread((char *) line, width * sizeof(RGBTRIPLE), 1),
-                "get_next_line: Error during read.");
+   unsigned char *buffer = malloc((add_width + padding) * bit_count);
+	//COMread funktioniert wahrscheinlich nur mit struct wegen komprimierung
+	for (int i = 0; i < width; i++) {
+		ERR_HANDLER(1 != COMread((char *) &farbe, sizeof(RGBTRIPLE), 1),
+								"get_next_line: Error during read.");
+		line[i] = farbe;
+	}
+
     ERR_HANDLER(1 != COMread((char *) buffer, padding + add_width, 1),
                 "get_next_line: Error during read.");
 		free(buffer);  

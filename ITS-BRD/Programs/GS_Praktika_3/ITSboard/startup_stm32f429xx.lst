@@ -903,19 +903,18 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4.fp.sp 
 --depend=.\itsboard\startup_stm32f429xx.d -o.\itsboard\startup_stm32f429xx.o -I
-.\RTE\_ITSboard -IC:\Users\timon\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\
-Core\Include -IC:\Users\timon\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1
-\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__EVAL SETA 1" --predef
-ine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 539" --predefine="_
-RTE_ SETA 1" --predefine="STM32F429xx SETA 1" --predefine="_RTE_ SETA 1" --list
+.\RTE\_ITSboard -I"F:\Program Files\Keil_Pack\ARM\CMSIS\5.9.0\CMSIS\Core\Includ
+e" -I"F:\Program Files\Keil_Pack\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device
+\ST\STM32F4xx\Include" --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA
+ 1" --predefine="__UVISION_VERSION SETA 538" --predefine="_RTE_ SETA 1" --prede
+fine="STM32F429xx SETA 1" --predefine="_RTE_ SETA 1" --list=.\itsboard\startup_
 
 
 
 ARM Macro Assembler    Page 15 
 
 
-=.\itsboard\startup_stm32f429xx.lst ../../ITS_BRD_LIB/Src/startup/startup_stm32
-f429xx.s
+stm32f429xx.lst ../../ITS_BRD_LIB/Src/startup/startup_stm32f429xx.s
 
 
 
