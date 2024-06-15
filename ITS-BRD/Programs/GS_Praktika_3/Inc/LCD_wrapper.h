@@ -6,6 +6,7 @@
 #include "input.h"
 
 #define LCD_BREITE 480
+#define LCD_HOEHE 320
 #define TO_4_BIT 8.2258
 #define TO_5_BIT 4.0476
 

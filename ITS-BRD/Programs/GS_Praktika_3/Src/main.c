@@ -46,6 +46,7 @@ int main(void){
 do {
 	readGPIOPin(GPIOF, 0, &next_picture);
 }while(!next_picture);
+	GUI_clear(WHITE);
 		}
 	}
 

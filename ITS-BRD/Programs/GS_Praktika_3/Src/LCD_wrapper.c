@@ -14,15 +14,16 @@ static uint16_t LCD_line_colors[LCD_BREITE];
 void wrap_line() {
 	starting_point.x = 0;
 	
-	for (int i = get_height(); i > 0; --i) {
+	for (int i = 0; i < get_height(); i++) {
 			get_next_line(line);
 			for (int j = 0; j < get_width(); ++j) {
-					LCD_line_colors[j] |= (int)(line[j].rgbtRed / TO_4_BIT) << 11;
-					LCD_line_colors[j] |= (int)(line[j].rgbtGreen / TO_5_BIT) << 5;
+					LCD_line_colors[j] = 0;
+					LCD_line_colors[j] |= ((int)(line[j].rgbtRed / TO_4_BIT)) << 11;
+					LCD_line_colors[j] |= ((int)(line[j].rgbtGreen / TO_5_BIT)) << 5;
 					LCD_line_colors[j] |= (int)(line[j].rgbtBlue / TO_4_BIT);
 			}
-			starting_point.y = i;
-			ERR_HANDLER((LCD_HÖHE < starting_point.y) && (starting_point.y > LCD_BREITE),
+			starting_point.y = (LCD_HOEHE - 1) - i;
+			ERR_HANDLER((LCD_HOEHE < starting_point.y) && (starting_point.y > LCD_BREITE),
 									"starting_point: außerhalb des displays");
 			GUI_WriteLine(starting_point, get_width(), LCD_line_colors);
 	}
