@@ -30,7 +30,7 @@
 #include "LCD_wrapper.h"
 #include "input_pin.h"
 
-RGBTRIPLE line[LCD_BREITE];
+static RGBTRIPLE line[LCD_BREITE];
 
 /**
   * @brief  Main program
@@ -43,7 +43,7 @@ int main(void){
 	initInput();
 	while (true) {
 		init_next_picture();
-        get_next_line();
+        get_next_line(line);
 		int next_picture;
 do {
 	readGPIOPin(GPIOF, 0, &next_picture);

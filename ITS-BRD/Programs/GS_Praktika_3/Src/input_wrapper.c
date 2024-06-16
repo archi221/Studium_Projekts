@@ -126,7 +126,6 @@ void get_next_line_8_pressed(RGBTRIPLE *line) {
                     if (color) {
                         go_down = color;
                         counter = amount;
-                        is_end_of_line = true;
                     } else {
                         counter += amount;
                     }

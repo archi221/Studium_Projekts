@@ -20,7 +20,6 @@ void wrap_line (int von, int höhe, int anzahl, RGBTRIPLE *line) {
         LCD_line_colors[j] |= (int) (line[j].rgbtBlue / TO_4_BIT);
     }
     GUI_WriteLine(starting_point, anzahl, LCD_line_colors);
-
 }
 
 void *get_line_adress() {
