@@ -10,7 +10,7 @@
 #define TO_4_BIT 8.2258
 #define TO_5_BIT 4.0476
 
-void wrap_line();
+void wrap_line(int von, int höhe, int anzahl, RGBTRIPLE *line);
 
 void* get_line_adress();
 
