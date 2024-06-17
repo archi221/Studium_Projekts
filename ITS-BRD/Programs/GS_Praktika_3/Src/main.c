@@ -29,6 +29,7 @@
 #include "input_wrapper.h"
 #include "LCD_wrapper.h"
 #include "input_pin.h"
+#include "errorhandler.h"
 
 static RGBTRIPLE line[LCD_BREITE];
 
@@ -42,8 +43,9 @@ int main(void){
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	initInput();
 	while (true) {
-		init_next_picture();
-        get_next_line(line);
+		if (EOK == init_next_picture()) {
+			get_next_line(line);
+		}
 		int next_picture;
 do {
 	readGPIOPin(GPIOF, 0, &next_picture);

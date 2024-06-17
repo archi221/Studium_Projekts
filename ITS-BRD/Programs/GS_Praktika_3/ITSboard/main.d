@@ -53,4 +53,4 @@
   ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
   ..\..\DisplayWaveshare\Inc\LCD_Touch.h ..\..\ITS_BRD_LIB\Inc\error.h \
   Inc\input.h Inc\input_wrapper.h Inc\BMP_types.h Inc\LCD_wrapper.h \
-  Inc\input_pin.h
+  Inc\input_pin.h Inc\errorhandler.h

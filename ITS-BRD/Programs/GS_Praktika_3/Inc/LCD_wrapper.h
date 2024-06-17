@@ -12,6 +12,5 @@
 
 void wrap_line(int von, int höhe, int anzahl, RGBTRIPLE *line);
 
-void* get_line_adress();
 
 #endif
