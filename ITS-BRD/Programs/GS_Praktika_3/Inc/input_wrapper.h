@@ -7,6 +7,10 @@
 
 #define LCD_BREITE 480
 #define LCD_HÖHE 320
+#define ESCAPE 0
+#define LINE_END 0
+#define BITMAP_END 1
+#define DELTA 2
 
 void get_next_line_24(RGBTRIPLE *line);
 
@@ -21,6 +25,8 @@ extern void (*get_next_line)(RGBTRIPLE *line );
 void get_BT_palette(struct tagRGBQUAD[]);
 
 void decompress_line(RGBTRIPLE *line);
+
+void find_end_of_line();
 
 int init_next_picture();
 
