@@ -30,10 +30,8 @@ void wrap_line (int von, int höhe, int anzahl, RGBTRIPLE *line) {
 		char buffer[40];
 		sprintf(buffer , "höhe: %d height; %d zu gross", höhe, get_height());
 		ERR_HANDLER(höhe >= get_height(), buffer);
-	delay(5);
 	sprintf(buffer , "von: %d  anzahl; %d width: %d zu gross", von, anzahl, get_width());
 		ERR_HANDLER((von + anzahl) > get_width(),buffer);
-	delay(5);
     for (int j = 0; j < anzahl; ++j) {
         LCD_line_colors[j] = 0;
         LCD_line_colors[j] |= ((int) (line[j].rgbtRed / TO_4_BIT)) << 11;

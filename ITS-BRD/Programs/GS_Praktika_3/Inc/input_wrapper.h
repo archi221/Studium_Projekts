@@ -11,6 +11,7 @@
 #define LINE_END 0
 #define BITMAP_END 1
 #define DELTA 2
+#define _3_BYTES 3
 
 void get_next_line_24(RGBTRIPLE *line);
 
@@ -18,7 +19,7 @@ void get_next_line_8(RGBTRIPLE *line);
 
 void get_next_line_8_pressed(RGBTRIPLE *line);
 
-void get_line(RGBTRIPLE *line, int anzahl, int ab, int von);
+void get_line(RGBTRIPLE *line, int anzahl);
 
 extern void (*get_next_line)(RGBTRIPLE *line );
 
@@ -32,7 +33,7 @@ int init_next_picture();
 
 void read_palette();
 
-void call_wrap_line(int von, int höhe, int anzahl, RGBTRIPLE *line);
+void call_wrap_line(int von, int höhe, RGBTRIPLE *line);
 
 int get_width();
 

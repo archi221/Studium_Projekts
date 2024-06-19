@@ -31,7 +31,7 @@
 #include "input_pin.h"
 #include "errorhandler.h"
 
-static RGBTRIPLE line[LCD_BREITE];
+static RGBTRIPLE line[LCD_BREITE + 255];
 
 /**
   * @brief  Main program

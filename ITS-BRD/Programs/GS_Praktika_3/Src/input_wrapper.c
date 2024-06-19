@@ -48,12 +48,10 @@ int init_next_picture() {
                 "biCompression: format not implemented");
 
     if (infoheader.biBitCount == 8) {
-        //for schleife einfügen
         int tabbellenlänge = infoheader.biClrUsed == 0 ? 256 : infoheader.biClrUsed;
-        for (int i = 0; i < tabbellenlänge; i++) {
-            ERR_HANDLER(1 != COMread((char *) &pallete[i], sizeof(RGBQUAD), 1),
-                        "readInfoHeader: Error during pallete read.");
-        }
+				ERR_HANDLER(1 != COMread((char *) pallete, tabbellenlänge * sizeof(RGBQUAD), 1),
+										"readInfoHeader: Error during pallete read.");
+        
 
         if (infoheader.biCompression) {
             get_next_line = get_next_line_8_pressed;
@@ -64,59 +62,64 @@ int init_next_picture() {
 						padding -= (infoheader.biWidth); // ein byte pro pixel
         }
     } else if (infoheader.biBitCount == 24) {
-				//ERR_HANDLER(1 != COMread((char *) &pallete[0], sizeof(RGBQUAD), 1),
-							//"readInfoHeader: Error during pallete read.");
         if (infoheader.biCompression) {
             ERR_HANDLER((true),
                         "biCompression: format not implemented for this formatt");
+						errno = NOK;
         } else {
             get_next_line = get_next_line_24;
             padding = (((infoheader.biWidth) * 24 + 31) / 32) * 4;//padding ist ein int
-						padding -= (infoheader.biWidth) * 3; // mal 3 bytes
+						padding -= (infoheader.biWidth) * _3_BYTES; 
         }
     } else {
         ERR_HANDLER(true, "biBitCount: format not implemented");
+				errno = NOK;
     }
-	return EOK;
+	return errno;
 }
 
 void get_next_line_8(RGBTRIPLE *line) {
     unsigned char *buffer = malloc(add_width + padding);
     for (int i = 0; i < height; ++i) {
-        get_line(line, width, 0, 0);
+        get_line(line, width);
         wrap_line(0, i, width, line);
         if ((padding + add_width) != 0) {
             ERR_HANDLER(1 != COMread((char *) buffer, padding + add_width, 1),
                         "get_next_line: Error during read.");
         }
-        free(buffer);
     }
+	free(buffer);
 }
 
-void get_line(RGBTRIPLE *line, int anzahl, int ab, int von) {
-		amount = 0;
+void get_line(RGBTRIPLE *line, int anzahl) {
 		for (int i = 0; i < anzahl; i++) {
 				ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
 										"get_next_line: Error during read.");
-				if ((i + ab + von) < width) {
-						line[i + ab].rgbtBlue = pallete[color].rgbBlue;
-						line[i + ab].rgbtGreen = pallete[color].rgbGreen;
-						line[i + ab].rgbtRed = pallete[color].rgbRed;
-				}
-			counter++;
+				line[counter].rgbtBlue = pallete[color].rgbBlue;
+				line[counter].rgbtGreen = pallete[color].rgbGreen;
+				line[counter].rgbtRed = pallete[color].rgbRed;
+				counter++;
 		}
 }
 
 void find_end_of_line() {
-	bool is_end_of_line = false;
-	while(!is_end_of_line) {
+	bool exit = false;
+	while(!exit) {
 		ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
 								"get_next_line amount: Error during read.");
 		ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
 								"get_next_line color: Error during read.");
-		if (amount == 0) {
-			if ((color == 0) || (color ==1)) {
-				is_end_of_line = true;
+		if (amount == ESCAPE) {
+			if ((color == LINE_END) || (color == BITMAP_END)) {
+				exit = true;
+			}else if (color == DELTA) {
+				exit = true;
+			}else {
+				color = (color % 2) ? color + 1: color;
+				unsigned char *buffer =  malloc(color * sizeof(unsigned char));
+				ERR_HANDLER(1 != COMread((char *) buffer,color * sizeof(unsigned char), 1),
+									"get_next_line color: Error during read.");
+				free(buffer);
 			}
 		}
 	}
@@ -124,59 +127,55 @@ void find_end_of_line() {
 
 void get_next_line_8_pressed(RGBTRIPLE *line) {
 	int von = 0;
-	int anzahl = 0;
-    for (int i = 0; i < height; ++i) {
-			bool is_end_of_line = false;
-        while (!is_end_of_line) {
-					
-						if ((counter + von) >= width) {
-								find_end_of_line();
-						}else {
-								ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
-														"get_next_line amount: Error during read.");
-								ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
-														"get_next_line color: Error during read.");
-					}
-            if (amount == ESCAPE) {
-                if (color == LINE_END || color == BITMAP_END) {
-										call_wrap_line(von, i, anzahl, line);
-										is_end_of_line = true;
-										counter = 0;
-										anzahl = 0;
-										von = 0;
-                } else if (color == DELTA) {
-										call_wrap_line(von, i, anzahl, line);
-                    ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
-                                "get_next_line amount: Error during read.");
-                    ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
-                                "get_next_line color: Error during read.");
-										i += color;
-										von += counter + amount;
-										counter = 0;
-										anzahl = 0;
-                   
-                } else {
-										 // da get line die variable color benutzt
-                    get_line(line, color, counter, von);
-										if (counter % 2) {
-											ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
-																	"get_next_line amount: Error during read.");
-											anzahl += counter;
+	for (int i = 0; i < height; ++i) {
+		bool is_end_of_line = false;
+			while (!is_end_of_line) {
+				
+					if ((counter + von) >= width) {
+							find_end_of_line();
+					}else {
+							ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
+													"get_next_line amount: Error during read.");
+							ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
+													"get_next_line color: Error during read.");
+				}
+					if (amount == ESCAPE) {
+						
+							if (color == LINE_END || color == BITMAP_END) {
+									call_wrap_line(von, i, line);
+									is_end_of_line = true;
+									von = 0;
+									counter = 0;
+							} else if (color == DELTA) {
+								
+									call_wrap_line(von, i, line);
+									ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
+															"get_next_line amount: Error during read.");
+									ERR_HANDLER(1 != COMread((char *) &color, sizeof(unsigned char), 1),
+															"get_next_line color: Error during read.");
+									i += color;
+									von += counter + amount;
+									counter = 0;
+								 
+							} else {
+									
+									amount = color;// da get line die variable color benutzt
+									get_line(line, color);
+									if (amount % 2) {
+										ERR_HANDLER(1 != COMread((char *) &amount, sizeof(unsigned char), 1),
+																"get_next_line amount: Error during read.");
 									}
-                }
-            } else {
-                for (int j = 0; j < amount; j++) {
-										if ((counter + von) < width) {
-												line[counter].rgbtBlue = pallete[color].rgbBlue;
-												line[counter].rgbtGreen = pallete[color].rgbGreen;
-												line[counter].rgbtRed = pallete[color].rgbRed;
-												counter++;
-												anzahl++;
-										}
-                }
-            }
-        }
-    }
+							}
+					} else {
+							for (int j = 0; j < amount; j++) {
+									line[counter].rgbtBlue = pallete[color].rgbBlue;
+									line[counter].rgbtGreen = pallete[color].rgbGreen;
+									line[counter].rgbtRed = pallete[color].rgbRed;
+									counter++;
+							}
+					}
+			}
+	}
 }
 
 void get_next_line_24(RGBTRIPLE *line) {
@@ -193,14 +192,14 @@ void get_next_line_24(RGBTRIPLE *line) {
     free(buffer);
 }
 
- void call_wrap_line(int von, int höhe, int anzahl, RGBTRIPLE *line) {
+ void call_wrap_line(int von, int höhe, RGBTRIPLE *line) {
 		if (von >= width) {
-			anzahl = 0;
-		}else if ((anzahl + von) > width) {
-			anzahl = (width - von);
+			counter = 0;
+		}else if ((counter + von) > width) {
+			counter = (width - von);
 		}
-		if (anzahl) {
-				wrap_line(von, höhe, anzahl, line);
+		if (counter) {
+				wrap_line(von, höhe, counter, line);
 		}
 }
 
