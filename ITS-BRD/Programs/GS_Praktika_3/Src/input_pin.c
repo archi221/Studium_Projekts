@@ -6,8 +6,8 @@
 #include "LCD_GUI.h"
 #include "lcd.h"
 
-int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value) {
-	//chekc if pin exist
-	*pin_value = (0x01 << pin) != (GPIOx->IDR & (0x01 << pin));
-	return SUCCESS;
+int readGPIOPin(GPIO_TypeDef *GPIOx, int pin, int *pin_value) {
+    //chekc if pin exist
+    *pin_value = (0x01 << pin) != (GPIOx->IDR & (0x01 << pin));
+    return SUCCESS;
 }

@@ -38,21 +38,21 @@ static RGBTRIPLE line[LCD_BREITE + 255];
   * @param  None
   * @retval None
   */
-int main(void){
-	initITSboard();                 // Initialisierung des ITS Boards
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	initInput();
-	while (true) {
-		if (EOK == init_next_picture()) {
-			get_next_line(line);
-		}
-		int next_picture;
-do {
-	readGPIOPin(GPIOF, 0, &next_picture);
-}while(!next_picture);
-	GUI_clear(WHITE);
-		}
-	}
+int main(void) {
+    initITSboard();                 // Initialisierung des ITS Boards
+    GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
+    initInput();
+    while (true) {
+        if (EOK == init_next_picture()) {
+            get_next_line(line);
+        }
+        int next_picture;
+        do {
+            readGPIOPin(GPIOF, 0, &next_picture);
+        } while (!next_picture);
+        GUI_clear(WHITE);
+    }
+}
 
 
 // EOF
