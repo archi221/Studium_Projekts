@@ -8,6 +8,6 @@ void init_display();
 
 void print_sensoren(uint64_t *sensoren, int anzahl);
 
-void print_messungen(int *messungen, int anzahl);
+void print_messungen(double *messungen, int anzahl);
 
 #endif

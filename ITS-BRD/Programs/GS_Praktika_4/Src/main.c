@@ -32,23 +32,13 @@
   * @retval None
   */
 int main(void){
-	initITSboard();                 // Initialisierung des ITS Boards
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
-	if (!checkVersionFlashFonts()) {
-	    // Ueberpruefe Version der Fonts im Flash passt nicht zur Software Version
-		Error_Handler();
-	}
-	
+	initITSboard(); // Initialisierung des ITS Boards
+    init_display(); // Initialisierung des Displays
+
 	lcdPrintS("Viel Spass mit dem ITS Board.");
 	printf("Viel Spass mit dem ITS Board.\r\n");
 	delay(3000);
-	
-	// Demo Drawing Board
-	TP_Dialog();//initialize the drawing board
-	while (1) { 
-		TP_DrawBoard(); 
-	}
+
 }
 
 // EOF
