@@ -1,10 +1,4 @@
-#ifndef __WRITE__H__
-#define __WRITE__H__
-
-#include <stdint.h>
-#include <stdbool.h>
-
-enum{OPEN_DRAIN, PUSH_PULL};
+#include "IO.h"
 
 void init_mode(int mode);
 
@@ -14,5 +8,6 @@ void write_reset();
 
 void write_bytes(unsigned char *commands, int anzahl);
 
+bool read_bit();
 
-#endif
+void read_bytes(unsigned char *bytes, int anzahl);

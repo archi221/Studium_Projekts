@@ -1,8 +1,5 @@
-#include "Read.h"
+#include "IO_wrapper.h"
 
-bool read_bit();
-
-void read_bytes(unsigned char *bytes, int anzahl);
 
 void read_rom_code(uint64_t *rom_code);
 
