@@ -4,15 +4,19 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define LEDS GPIOD
+#define NO_SLAVE 1
+#define SLAVE 0
+
 enum{OPEN_DRAIN, PUSH_PULL};
 
 void init_IO();
 
 void init_mode(int mode);
 
-void write_bit();
+void write_bit(bool value);
 
-void write_reset();
+int write_reset();
 
 void write_bytes(unsigned char *commands, int anzahl);
 
