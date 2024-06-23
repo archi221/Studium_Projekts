@@ -1,5 +1,7 @@
 #include "IO.h"
 #include "zeitmessung.h"
+#include "errorhandler.h"
+#include "stm32f4xx_hal.h"
 
 static int mode;
 
@@ -21,41 +23,56 @@ void init_mode(int mode) {
 }
 
 void write_bit(bool bit_value) {
-    //error check needet for mode
     LEDS->BSRR = (0x01 << 17);
     sleep(6);
     if (bit_value) {
         LEDS->BSRR = (0x01 << 1);
         sleep(64);
     } else {
-        sleep(54)
+        sleep(54);
         LEDS->BSRR = (0x01 << 1);
         sleep(10);
-    }
+    };
 }
 
 int write_reset() {
-    //error check needet for mode
+    RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Write reset: Wrong mode")
     LEDS->BSRR = (0x01 << 1);
     sleep(480);
     LEDS->BSRR = (0x01 << 17);
     sleep(70);
-    int slave = (0x01 << 1) != (LEDS->IDR & (0x01 << 1)
+    int slave = (0x01 << 1) != (LEDS->IDR & (0x01 << 1));
     sleep(410);
     return slave;
 }
 
 bool read_bit() {
-    //error check needet for mode
     LEDS->BSRR = (0x01 << 17);
     sleep(6);
     LEDS->BSRR = (0x01 << 1);
     sleep(9);
-    int bit = (0x01 << 1) != (LEDS->IDR & (0x01 << 1);
-    sleep(55),
-    return bit;
+    int bit = (0x01 << 1) != (LEDS->IDR & (0x01 << 1));
+    sleep(55);
+    return (bit = bit > 0 ? 1 : 0);
 }
 
-void write_bytes(unsigned char *commands, int anzahl);
+int write_bytes(unsigned char *commands, int anzahl) {
+    RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Write bit: Wrong mode")
+    for (int i = 0; i < anzahl; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            write_bit(commands[i] &= (0x1 << j));//da jedes value über null als true gewertet wird
+        }
+    }
+    return EOK;
+}
 
-void read_bytes(unsigned char *bytes, int anzahl);
+int read_bytes(unsigned char *bytes, int anzahl) {
+    RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Read bit: Wrong mode")
+    for (int i = 0; i < anzahl; ++i) {
+        bytes[i] = 0;
+        for (int j = 0; j < 8; ++j) {
+            bytes[i] |= (read_bit() << j);
+        }
+    }
+    return EOK;
+}

@@ -1,11 +1,5 @@
 #include "output.h"
 #include <stdint.h>
-#include <stdio.h>
-#include "stm32f4xx_hal.h"
-#include "init.h"
-#include "delay.h"
-#include "LCD_GUI.h"
-#include "lcd.h"
 #include "error_handeling.h"
 
 int phase = NO_ROTATION_YET;
