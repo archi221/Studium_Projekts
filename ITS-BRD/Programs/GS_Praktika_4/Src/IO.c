@@ -1,5 +1,7 @@
 #include "IO.h"
 
+void init_IO();
+
 void init_mode(int mode);
 
 void write_bit();

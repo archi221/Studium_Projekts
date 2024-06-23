@@ -3,11 +3,11 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "sensoren.h"
 
 void init_display();
 
-void print_sensoren(uint64_t *sensoren, int anzahl);
+void print_sensoren(sensor *sensoren, int anzahl);
 
-void print_messungen(double *messungen, int anzahl);
 
 #endif
