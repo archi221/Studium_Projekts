@@ -3,9 +3,9 @@
 #include <stdint.h>
 
 typedef struct sensor{
-	char typ[7];
-	uint64_t pdrom;	
+	char sensor[7];
+	unsigned char pdrom [8];
 	double temperatur;
-}sensor;
+}__attribute__((__packed__)) sensor;
 
 #endif

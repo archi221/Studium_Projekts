@@ -10,7 +10,7 @@ void init_display() {
     GUI_init(DEFAULT_BRIGHTNESS);
     lcdGotoXY( 0, 0);
     lcdPrintS("Sensoren");
-    lcdGotoXY( 8, 0);
+    lcdGotoXY( 9, 0);
     lcdPrintS("PDROM");
     lcdGotoXY( 27, 0);
     lcdPrintS("Temp.  [C]");
@@ -20,11 +20,11 @@ void print_sensoren(sensor *sensoren, int anzahl) {
 		
     for (int i = 0; i < anzahl; ++i) {
         lcdGotoXY( 0, i + 1);
-        lcdPrintS(sensoren[i].typ);
-				lcdGotoXY( 8, i + 1);
-				sprintf(buffer, "0x%" PRIx64, sensoren[i].pdrom);
+        lcdPrintS(sensoren[i].sensor);
+				lcdGotoXY( 9, i + 1);
+				sprintf(buffer, "0x%" PRIx64, (uint64_t)sensoren[i].pdrom);
         lcdPrintS(buffer);
-				snprintf(buffer, 7, "%3.6f", sensoren[i].temperatur);
+				snprintf(buffer, 9, "%3.6f", sensoren[i].temperatur);
 				lcdGotoXY( 27, i + 1);
         lcdPrintS(buffer);			
     }

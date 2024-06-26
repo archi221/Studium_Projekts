@@ -10,7 +10,7 @@
       <TargetName>ITSboard</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
+      <pCCUsed>6210000::V6.21::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -716,6 +716,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Display_out.c</FilePath>
             </File>
+            <File>
+              <FileName>errorhandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\errorhandler.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1266,6 +1271,11 @@
               <FileName>sensoren.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\sensoren.h</FilePath>
+            </File>
+            <File>
+              <FileName>errorhandler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\errorhandler.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2132,6 +2142,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Display_out.c</FilePath>
             </File>
+            <File>
+              <FileName>errorhandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\errorhandler.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2682,6 +2697,11 @@
               <FileName>sensoren.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\sensoren.h</FilePath>
+            </File>
+            <File>
+              <FileName>errorhandler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\errorhandler.h</FilePath>
             </File>
           </Files>
         </Group>

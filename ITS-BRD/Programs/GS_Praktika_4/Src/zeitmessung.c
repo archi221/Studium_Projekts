@@ -28,7 +28,7 @@ double getZeitspanne(){
 void sleep(double anzahl_ms) {
 	uint32_t time2 = getTimeStamp();
 	uint32_t time1;
-	uint32_t differenz;
+	double differenz = 0;
 	anzahl_ms *= TO_TIMER_INCREMENTS;
 	
 	do {
@@ -39,5 +39,5 @@ void sleep(double anzahl_ms) {
 			differenz = (UINT32_MAX - time2) + time1;
 	}
 	
-	} while(differenz < (uint32_t)anzahl_ms);
+	} while(differenz < anzahl_ms);
 }

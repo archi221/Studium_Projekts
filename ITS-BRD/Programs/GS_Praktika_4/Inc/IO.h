@@ -16,7 +16,7 @@ void init_IO();
 
 void init_mode(int mode);
 
-void write_bit(bool bit_value);
+void write_bit(int bit_value);
 
 int write_reset();
 
