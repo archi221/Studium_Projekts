@@ -35,7 +35,7 @@ void wrap_line(int von, int höhe, int anzahl, RGBTRIPLE *line) {
     for (int j = 0; j < anzahl; ++j) {
         LCD_line_colors[j] = 0;
         LCD_line_colors[j] |= ((int) (line[j].rgbtRed >> 3)) << 11;
-        LCD_line_colors[j] |= ((int) (line[j].rgbtGreen >> 4)) << 5;
+        LCD_line_colors[j] |= ((int) (line[j].rgbtGreen >> 2)) << 5;
         LCD_line_colors[j] |= (int) (line[j].rgbtBlue >> 3);
     }
     GUI_WriteLine(starting_point, anzahl, LCD_line_colors);
