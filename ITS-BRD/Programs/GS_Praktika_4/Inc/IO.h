@@ -16,11 +16,11 @@ void init_IO();
 
 void init_mode(int mode);
 
-void write_bit(int bit_value);
+void write_bit(uint64_t bit_value);
 
 int write_reset();
 
-int write_bytes(unsigned char *commands, int anzahl);
+int write_bytes(uint64_t comand, int anzahl);
 
 bool read_bit();
 

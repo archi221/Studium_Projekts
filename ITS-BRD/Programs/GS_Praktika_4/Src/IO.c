@@ -23,7 +23,7 @@ void init_mode(int mode) {
     }
 }
 
-void write_bit(int bit_value) {
+void write_bit(uint64_t bit_value) {
     LEDS->BSRR = (0x01 << 17);
     sleep(6);
     if (bit_value) {
@@ -52,17 +52,15 @@ bool read_bit() {
     sleep(6);
     LEDS->BSRR = (0x01 << 1);
     sleep(9);
-    int bit = (0x01 << 1) != (LEDS->IDR & (0x01 << 1));
+    bool bit = (0x01 << 1) != (LEDS->IDR & (0x01 << 1));
     sleep(55);
     return bit;
 }
 
-int write_bytes(unsigned char *commands, int anzahl) {
+int write_bytes(uint64_t comand, int anzahl) {
     RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Write bit: Wrong mode")
-    for (int i = 0; i < anzahl; ++i) {
-        for (int j = 0; j < 8; ++j) {
-            write_bit(commands[i] &= (0x1 << j));//da jedes value über null als true gewertet wird
-        }
+    for (int i = 0; i < anzahl * 8; ++i) {
+            write_bit(comand &= (0x1 << i));//da jedes value über null als true gewertet wird
     }
     return EOK;
 }
@@ -70,10 +68,10 @@ int write_bytes(unsigned char *commands, int anzahl) {
 int read_bytes(unsigned char *bytes, int anzahl) {
     RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Read bit: Wrong mode")
     for (int i = 0; i < anzahl; ++i) {
-        bytes[i] = 0xf;
+        bytes[i] = 0x0;
         for (int j = 0; j < 8; ++j) {
-						int r = read_bit();
-            bytes[i] |= (r << (7 - j));
+						unsigned char r = read_bit();
+            bytes[i] |= (r << j);
         }
     }
     return EOK;
