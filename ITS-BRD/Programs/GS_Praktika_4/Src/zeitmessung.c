@@ -22,7 +22,7 @@ double getZeitspanne(){
 	} else {
 		differenz = (UINT32_MAX - t2) + t1;
 	}
-	return (double)differenz / TO_MILLISECONDS;
+	return (double)differenz / TO_MIKROSECONDS;
 }
 
 void sleep(double anzahl_ms) {

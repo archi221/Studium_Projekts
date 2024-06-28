@@ -7,7 +7,7 @@
 #include "LCD_Demos.h"
 #include "stm32f4xx_hal.h"
  
-#define TO_MILLISECONDS 90
+#define TO_MIKROSECONDS 90
 #define TO_TIMER_INCREMENTS 90
 
 /**

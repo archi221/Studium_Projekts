@@ -1,5 +1,6 @@
 #ifndef __SENSOREN__H__
 #define __SENSOREN__H__
+
 #include <stdint.h>
 
 typedef struct sensor{

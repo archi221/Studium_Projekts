@@ -16,11 +16,13 @@ void init_IO();
 
 void init_mode(int mode);
 
-void write_bit(uint64_t bit_value);
+void write_bit(uint8_t bit_value);
+
+int write_byte(uint8_t comand);
 
 int write_reset();
 
-int write_bytes(uint64_t comand, int anzahl);
+int write_bytes(uint8_t *comand, int anzahl);
 
 bool read_bit();
 
