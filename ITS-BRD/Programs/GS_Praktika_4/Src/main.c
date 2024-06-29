@@ -69,18 +69,22 @@ int main(void){
 	sensoren[0].pdrom[5] = 0x00;
 	sensoren[0].pdrom[6] = 0x00;
 	sensoren[0].pdrom[7] = 0xc0;
-	LOOP_ON_ERR(EOK == write_reset(), "init_mode: kein sklave");
-	write_byte(0x55);
-	write_bytes(sensoren[0].pdrom, 8);
-	write_byte(0x44);
-	init_mode(PUSH_PULL);
-	sleep(750 * 1000);
-	init_mode(OPEN_DRAIN);
-	LOOP_ON_ERR(EOK == write_reset(), "init_mode: kein sklave");
-	write_byte(0x55);
-	write_bytes(sensoren[0].pdrom, 8);
-	write_byte(0xBE);
-	read_temperature(&sensoren[0].temperatur);
+	anzahl_sensoren++;
+	while (true) {
+		LOOP_ON_ERR(EOK == write_reset(), "init_mode: kein sklave");
+		write_byte(0x55);
+		write_bytes(sensoren[0].pdrom, 8);
+		write_byte(0x44);
+		init_mode(PUSH_PULL);
+		sleep(750 * 1000);
+		init_mode(OPEN_DRAIN);
+		LOOP_ON_ERR(EOK == write_reset(), "init_mode: kein sklave");
+		write_byte(0x55);
+		write_bytes(sensoren[0].pdrom, 8);
+		write_byte(0xBE);
+		read_temperature(&sensoren[0].temperatur);
+		print_sensoren(sensoren, anzahl_sensoren);
+	}
 	#else
 	#endif
 }

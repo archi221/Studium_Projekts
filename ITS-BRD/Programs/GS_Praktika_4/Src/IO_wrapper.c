@@ -2,6 +2,7 @@
 #include "IO.h"
 #include <stdint.h>
 #include "errorhandler.h"
+#include "sensoren.h"
 
 static unsigned char dscrc_table[] = {
 0, 94,188,226, 97, 63,221,131,194,156,126, 32,163,253, 31, 65,
@@ -38,12 +39,18 @@ bool check_CRC(uint8_t *bytes, int anzahl) {
 
 void read_temperature(double *temperatur) {
 	read_bytes(temperatur_bytes, 9);
-	ERR_HANDLER(!check_CRC(temperatur_bytes, 9), "CRC falsch");
-	uint16_t temperatur_zwischenspeicher = temperatur_bytes[0];
-	temperatur_zwischenspeicher |= (temperatur_bytes[1] << 8);
-	if ((0x01 << 15) | temperatur_zwischenspeicher) {
-	 temperatur = 
-	} else {
+	//ERR_HANDLER(!check_CRC(temperatur_bytes, 9), "CRC falsch");
+	uint16_t temperatur_zwischenspeicher = temperatur_bytes[0] | (((uint16_t)temperatur_bytes[1]) << 8);
 	
+	/*tests
+	temperatur_zwischenspeicher = 0xFF5E;
+	temperatur_zwischenspeicher = 0xFC90;
+	temperatur_zwischenspeicher = 0x07D0;
+	*/
+	if ((0x01 << 15) & temperatur_zwischenspeicher) {
+		temperatur_zwischenspeicher &= ~(0x01 << 15);
+		*temperatur = -1 * (SENSOR_RESELUTION * ((0x01 << 15) - temperatur_zwischenspeicher));
+	} else {		
+		*temperatur = SENSOR_RESELUTION * temperatur_zwischenspeicher;
 	}
 }
