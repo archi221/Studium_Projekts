@@ -12,7 +12,7 @@ void init_mode(int mode) {
         LEDS->OTYPER |= (0x01 << 1);
         LEDS->OTYPER &= ~0x01;
         LEDS->BSRR = 0x01;
-				LEDS->BSRR = (0x01 << 1);
+        LEDS->BSRR = (0x01 << 1);
         mode = OPEN_DRAIN;
     } else if (mode == PUSH_PULL) {
         LEDS->OTYPER &= ~0x01;
@@ -58,17 +58,18 @@ bool read_bit() {
 }
 
 int write_byte(uint8_t comand) {
-	    RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Write bit: Wrong mode")
-	    for (int i = 0; i < 8; ++i) {
-            write_bit(comand & (0x1 << i));//da jedes value über null als true gewertet wird
+    RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Write bit: Wrong mode")
+    for (int i = 0; i < 8; ++i) {
+        write_bit(comand &
+                  (0x1 << i));//da jedes value über null als true gewertet wird
     }
-	return EOK;
+    return EOK;
 }
 
 int write_bytes(uint8_t *comand, int anzahl) {
     RETURN_NOK_ON_ERR(mode != OPEN_DRAIN, "Write bit: Wrong mode")
     for (int i = 0; i < anzahl; ++i) {
-            write_byte(comand[i]);//da jedes value über null als true gewertet wird
+        write_byte(comand[i]);//da jedes value über null als true gewertet wird
     }
     return EOK;
 }
@@ -78,7 +79,7 @@ int read_bytes(unsigned char *bytes, int anzahl) {
     for (int i = 0; i < anzahl; ++i) {
         bytes[i] = 0x0;
         for (int j = 0; j < 8; ++j) {
-						unsigned char r = read_bit();
+            unsigned char r = read_bit();
             bytes[i] |= (r << j);
         }
     }

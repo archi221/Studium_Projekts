@@ -22,13 +22,14 @@ static char buf[BUF_SIZE];
 */
 
 int printError(bool cnd, char *file, int line, char *msg, bool loopForEver) {
-   if (cnd){
-      snprintf(buf, sizeof(buf) / sizeof(buf[0]), "Error in file %s line %d: %s\n", file, line, msg);
-      lcdGotoXY(1,1);
-      lcdPrintS(buf);
-      while(loopForEver) ;
-      return NOK;
-   }
-   return EOK;
+    if (cnd) {
+        snprintf(buf, sizeof(buf) / sizeof(buf[0]),
+                 "Error in file %s line %d: %s\n", file, line, msg);
+        lcdGotoXY(1, 1);
+        lcdPrintS(buf);
+        while (loopForEver);
+        return NOK;
+    }
+    return EOK;
 }
 // EOF

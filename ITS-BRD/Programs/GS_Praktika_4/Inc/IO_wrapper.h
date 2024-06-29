@@ -5,7 +5,27 @@
 #include <stdbool.h>
 //prellen muss nicht berücksichtigt werden
 
+// TMEX API TEST BUILD DECLARATIONS
+#define TMEXUTIL
+//#include "ibtmexcw.h"
+long session_handle;
+// END TMEX API TEST BUILD DECLARATIONS
+// definitions
+#define FALSE 0
+#define TRUE 1
 
+// method declarations
+int OWFirst();
+
+int OWNext();
+
+int OWSearch();
+
+int OWVerify();
+
+void OWTargetSetup(unsigned char family_code);
+
+void OWFamilySkipSetup();
 
 void read_rom_code(uint64_t *rom_code);
 
