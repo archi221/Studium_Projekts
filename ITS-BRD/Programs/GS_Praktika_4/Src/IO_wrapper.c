@@ -28,7 +28,7 @@ static unsigned char dscrc_table[] = {
         116, 42, 200, 150, 21, 75, 169, 247, 182, 232, 10, 84, 215, 137, 107,
         53};
 
-static uint8_t temperatur_bytes[8];
+static uint8_t temperatur_bytes[9];
 
 static unsigned char ROM_NO[8];
 
@@ -52,10 +52,9 @@ bool check_CRC(uint8_t *bytes, int anzahl) {
 
 void read_temperature(double *temperatur) {
     read_bytes(temperatur_bytes, 9);
-    //ERR_HANDLER(!check_CRC(temperatur_bytes, 9), "CRC falsch");
+    ERR_HANDLER(!check_CRC(temperatur_bytes, 9), "CRC falsch");
     uint16_t temperatur_zwischenspeicher =
             temperatur_bytes[0] | (((uint16_t) temperatur_bytes[1]) << 8);
-
     /*tests
     temperatur_zwischenspeicher = 0xFF5E;
     temperatur_zwischenspeicher = 0xFC90;

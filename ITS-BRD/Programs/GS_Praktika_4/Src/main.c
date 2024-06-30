@@ -86,6 +86,7 @@ int main(void) {
         print_sensoren(sensoren, anzahl_sensoren);
     }
 #else
+		while (true) {
 		anzahl_sensoren = 0;
     int rslt = OWFirst();
     while (rslt) {
@@ -95,9 +96,21 @@ int main(void) {
         rslt = OWNext();
     }
 		for (int i = 0; i < anzahl_sensoren; ++i) {
-			sensoren[i].temperatur = -5 + i;
+			  LOOP_ON_ERR(EOK == write_reset(), "init_mode: kein sklave");
+        write_byte(0x55);
+        write_bytes(sensoren[i].pdrom, 8);
+        write_byte(0x44);
+        init_mode(PUSH_PULL);
+        sleep(750 * 1000);
+        init_mode(OPEN_DRAIN);
+				LOOP_ON_ERR(EOK == write_reset(), "init_mode: kein sklave");
+        write_byte(0x55);
+        write_bytes(sensoren[i].pdrom, 8);
+        write_byte(0xBE);
+        read_temperature(&sensoren[i].temperatur);
 		}
-		print_sensoren(sensoren, anzahl_sensoren);
+		print_sensoren(sensoren, anzahl_sensoren);	
+	}
 #endif
 }
 
