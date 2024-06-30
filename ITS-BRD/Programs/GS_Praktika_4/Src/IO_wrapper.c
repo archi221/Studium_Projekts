@@ -32,7 +32,7 @@ static uint8_t temperatur_bytes[8];
 
 static unsigned char ROM_NO[8];
 
-int LastDiscrepancy;
+static int LastDiscrepancy;
 
 static int LastFamilyDiscrepancy;
 
@@ -40,9 +40,6 @@ static int LastDeviceFlag;
 
 static unsigned char crc8;
 
-void read_rom_code(uint64_t *rom_code);
-
-void search_rom_code(uint64_t *rom_codes, int *anzahl_sensoren);
 
 bool check_CRC(uint8_t *bytes, int anzahl) {
     uint8_t crc8 = 0;
@@ -96,14 +93,12 @@ int OWNext() {
     return OWSearch();
 }
 
-//--------------------------------------------------------------------------
-// Find the 'next' devices on the 1-Wire bus
-// Return TRUE : device found, ROM number in ROM_NO buffer
-// FALSE : device not found, end of search
-//
-int OWNext() {
-// leave the search state alone
-    return OWSearchs();
+
+void get_pdrom(uint8_t *pdrom) {
+	for (int i = 0; i < 8; ++i) {
+		pdrom[i] = ROM_NO[i];
+	}
+
 }
 
 //--------------------------------------------------------------------------
@@ -127,7 +122,7 @@ int OWSearch() {
 // if the last call was not the last one
     if (!LastDeviceFlag) {
 // 1-Wire reset
-        if (!OWReset()) {
+        if (!write_reset()) {
 // reset the search
             LastDiscrepancy = 0;
             LastDeviceFlag = FALSE;
@@ -135,12 +130,12 @@ int OWSearch() {
             return FALSE;
         }
 // issue the search command
-        OWWriteByte(0xF0);
+        write_byte(0xF0);
 // loop to do the search
         do {
 // read a bit and its complement
-            id_bit = OWReadBit();
-            cmp_id_bit = OWReadBit();
+            id_bit = read_bit();
+            cmp_id_bit = read_bit();
 // check for no devices on 1-wire
             if ((id_bit == 1) && (cmp_id_bit == 1))
                 break;
@@ -172,26 +167,27 @@ int OWSearch() {
                 else
                     ROM_NO[rom_byte_number] &= ~rom_byte_mask;
 // serial number search direction write bit
-                OWWriteBit(search_direction);
+                write_bit(search_direction);
 // increment the byte counter id_bit_number
 // and shift the mask rom_byte_mask
                 id_bit_number++;
                 rom_byte_mask <<= 1;
 // if the mask is 0 then go to new SerialNum byte rom_byte_number and reset mask
                 if (rom_byte_mask == 0) {
-                    docrc8(ROM_NO[rom_byte_number]); // accumulate the CRC
+                    // accumulate the CRC
                     rom_byte_number++;
                     rom_byte_mask = 1;
                 }
             }
         } while (rom_byte_number < 8); // loop until through all ROM bytes 0-7
 // if the search was successful then
-        if (!((id_bit_number < 65) || (crc8 != 0))) {
+        if (!(id_bit_number < 65)) {
 // search successful so set LastDiscrepancy,LastDeviceFlag,search_result
             LastDiscrepancy = last_zero;
 // check for last device
-            if (LastDiscrepancy == 0)
+            if (LastDiscrepancy == 0) {
                 LastDeviceFlag = TRUE;
+						}
             search_result = TRUE;
         }
     }

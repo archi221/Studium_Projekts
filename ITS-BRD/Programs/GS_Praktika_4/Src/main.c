@@ -86,17 +86,18 @@ int main(void) {
         print_sensoren(sensoren, anzahl_sensoren);
     }
 #else
-    printf("\nFIND ALL\n");
-    int cnt = 0;
+		anzahl_sensoren = 0;
     int rslt = OWFirst();
     while (rslt) {
 // print device found
-        for (int i = 7; i >= 0; i--) {
-            printf("%02X", ROM_NO[i]);
-        }
-        cnt++;
+				get_pdrom(sensoren[anzahl_sensoren].pdrom);
+				anzahl_sensoren++;
         rslt = OWNext();
     }
+		for (int i = 0; i < anzahl_sensoren; ++i) {
+			sensoren[i].temperatur = -5 + i;
+		}
+		print_sensoren(sensoren, anzahl_sensoren);
 #endif
 }
 
