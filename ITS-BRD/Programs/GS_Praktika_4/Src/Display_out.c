@@ -26,19 +26,21 @@ void print_sensoren(sensor *sensoren, int anzahl) {
             pdrom |= ((uint64_t) sensoren[i].pdrom[7 - j] << (j * 8));
         }
 				if (lastpdroms[i] != pdrom) {
+					lastpdroms[i] = pdrom;
 					lcdGotoXY(0, i + 1);
 					if (sensoren[i].pdrom[0] == 0x28) {
-							strncpy(buffer, "DS18B20", 7);
+							strncpy(buffer, "DS18S20", 8);
 					} else if (sensoren[i].pdrom[0] == 0x10) {
-							strncpy(buffer, "DS18S20", 7);
+							strncpy(buffer, "DS18S20", 8);
 					} else {
-							strncpy(buffer, "unknown", 7);
+							strncpy(buffer, "unknown", 8);
 					}
 					lcdPrintS(buffer);
 					lcdGotoXY(9, i + 1);
 					sprintf(buffer, "0x%"PRIx64, pdrom);
+					lcdPrintS(buffer);
 			}
-        lcdPrintS(buffer);
+        
         snprintf(buffer, 9, "%3.6f", sensoren[i].temperatur);
         lcdGotoXY(30, i + 1);
         lcdPrintS(buffer);
@@ -47,6 +49,7 @@ void print_sensoren(sensor *sensoren, int anzahl) {
 			for (int i = 0; i < (last_anzahl - anzahl); ++i) {
 				lcdGotoXY(0, i + anzahl + 1);
 				lcdPrintlnS("                        ");
+				lastpdroms[i + anzahl] = 0;
 			}
 		}
 		last_anzahl = anzahl;
