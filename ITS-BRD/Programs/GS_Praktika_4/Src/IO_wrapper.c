@@ -78,7 +78,7 @@ int OWFirst() {
 // reset the search state
     LastDiscrepancy = 0;
     LastDeviceFlag = FALSE;
-    LastFamilyDiscrepancy = 0;
+    
     return OWSearch();
 }
 
