@@ -17,12 +17,11 @@ int init_display(){
 	return ALLES_GUT;
 }
 
-int setValues(double Winkel, double Winkelgeschwindigkeit) {
+void setValues(double Winkel, double Winkelgeschwindigkeit) {
 	
 	setGPIOPin(GPIOE, 1, true);	
 	char winkel[8] = {0};
 	char winkelgeschwindigkeit[8] = {0};
-	int errno = 0;
 	snprintf(winkel, 7, "%3.1f", Winkel);
 	snprintf(winkelgeschwindigkeit, 7, "%3.1f", Winkelgeschwindigkeit);
 	for (int i = 0; 5 > i; i++) {
@@ -34,9 +33,6 @@ int setValues(double Winkel, double Winkelgeschwindigkeit) {
 			}else {
 				lcdPrintC(winkel[i]);
 				letzter_winkel[i] = winkel[i];
-			}
-			if (!errno){
-				errno = set_fsm_state_while_print();
 			}
 		}
 	}
@@ -50,13 +46,9 @@ int setValues(double Winkel, double Winkelgeschwindigkeit) {
 				lcdPrintC(winkelgeschwindigkeit[i]);
 				letzte_winkelgeschwindigkeit[i] = winkelgeschwindigkeit[i];
 			}
-			if (!errno){
-				errno = set_fsm_state_while_print();
-			}
 		}
 	}
 	setGPIOPin(GPIOE, 1, false);	
-	return errno;
 }
 
 void reset_display() {

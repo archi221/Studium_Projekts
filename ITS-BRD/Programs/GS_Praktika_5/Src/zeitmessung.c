@@ -15,7 +15,14 @@ t1 = getTimeStamp();
 }
  
 double getZeitspanne(){
-	t2 = t1;
-	t1 = getTimeStamp();
-	return t1 - t2;
+    uint32_t differenz;
+    t2 = t1;
+    t1 = getTimeStamp();
+
+    if (t1 >= t2) {
+        differenz = t1 - t2;
+    } else {
+        differenz = (UINT32_MAX - t2) + t1;
+    }
+	return differenz;
 }

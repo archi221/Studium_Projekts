@@ -9,7 +9,7 @@ void testing(int test);
 
 int init_display();
 
-int setValues(double Winkel,double Winkelgeschwindigkeit);
+void setValues(double Winkel,double Winkelgeschwindigkeit);
 
 void reset_display();
 
