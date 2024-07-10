@@ -6,8 +6,8 @@
 #include "zeitmessung.h"
 
 static volatile int pulse_count = 0;
-static volatile int fsm_state = ERROR_STATE;
-static volatile int phase_fsm;
+static int fsm_state = ERROR_STATE;
+static int phase_fsm;
 static volatile int direction = 0;
 extern volatile int errno;
 
@@ -85,9 +85,9 @@ void right_rotation() {
 
 void left_rotation() {
 	pulse_count--;
-		if (pulse_count <= -1200) {
-			add_rotation();
-			pulse_count = 0;
+	if (pulse_count <= -1200) {
+		add_rotation();
+		pulse_count = 0;
 	}
 	direction = 0;
 }

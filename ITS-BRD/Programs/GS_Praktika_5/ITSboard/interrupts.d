@@ -49,4 +49,5 @@
   ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
   ..\..\DisplayWaveshare\Inc\LCD_general.h \
   ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
-  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h ..\..\ITS_BRD_LIB\Inc\lcd.h
+  C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h ..\..\ITS_BRD_LIB\Inc\lcd.h \
+  Inc\output.h

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "stm32f4xx_hal.h"
 #include "DisplayOut.h"
+#include "output.h"
 
 void init_interrupts() {
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOGEN;
@@ -38,13 +39,15 @@ void aktivate_interrupts() {
 }
 
 void EXTI0_IRQHandler(void) {
-	//testing(0);
+	setGPIOPin(GPIOE, 1, true);	
 	set_fsm_state();
 	EXTI->PR = (1);
+	setGPIOPin(GPIOE, 1, false);
 }
 
 void EXTI1_IRQHandler(void) {
-	//testing(1);
+	setGPIOPin(GPIOE, 1, true);	
 	set_fsm_state();
 	EXTI->PR = (1<<1);
+	setGPIOPin(GPIOE, 1, false);	
 }

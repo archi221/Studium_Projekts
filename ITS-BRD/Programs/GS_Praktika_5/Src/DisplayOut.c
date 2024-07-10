@@ -8,7 +8,6 @@ static char letzter_winkel[8] = {0};
 static char letzte_winkelgeschwindigkeit[10] = {0};
 
 int init_display(){
-	lcdSetFont(12);
 	lcdGotoXY( 0, 1);
 	lcdPrintS("Drehwinkel:");
 	lcdGotoXY( 0, 2);
@@ -19,7 +18,6 @@ int init_display(){
 
 void setValues(double Winkel, double Winkelgeschwindigkeit) {
 	
-	setGPIOPin(GPIOE, 1, true);	
 	char winkel[8] = {0};
 	char winkelgeschwindigkeit[8] = {0};
 	snprintf(winkel, 7, "%3.1f", Winkel);
@@ -48,7 +46,6 @@ void setValues(double Winkel, double Winkelgeschwindigkeit) {
 			}
 		}
 	}
-	setGPIOPin(GPIOE, 1, false);	
 }
 
 void reset_display() {

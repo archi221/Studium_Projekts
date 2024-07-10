@@ -35,6 +35,8 @@
 #include "DisplayOut.h"
 
 volatile int errno;
+uint64_t controll_time = 0;
+int same_time_counter = 0;
 /**
   * @brief  Main program
   * @param  None
@@ -62,12 +64,25 @@ int main(void){
 		if (time >= WARTEZEIT) {
 			print(pulse);
 		}
+		if (controll_time == time) {
+			same_time_counter++;
+			if (same_time_counter > 50000) {
+				same_time_counter = 0;
+				print(pulse);
+			}
+		}else {
+			same_time_counter = 0;
+		}
+		controll_time = time;
+		
 		if (errno) {
 			kill_interrupts();
 			errno = 0;
+			lcdGotoXY( 0, 9);
+			lcdPrintS("Error Press button 6 to reset");
 			while(get_error_input()){}
 			lcdGotoXY( 0, 9);
-			lcdPrintS("                            ");
+			lcdPrintS("                               ");
 			reset_display();
 			reset_calculations();
 			reset_fsm();
