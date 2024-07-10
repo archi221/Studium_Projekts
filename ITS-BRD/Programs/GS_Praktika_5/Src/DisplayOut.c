@@ -5,7 +5,7 @@
 #include "output.h"
 
 static char letzter_winkel[8] = {0};
-static char letzte_winkelgeschwindigkeit[8] = {0};
+static char letzte_winkelgeschwindigkeit[10] = {0};
 
 int init_display(){
 	lcdSetFont(12);
@@ -23,7 +23,7 @@ void setValues(double Winkel, double Winkelgeschwindigkeit) {
 	char winkel[8] = {0};
 	char winkelgeschwindigkeit[8] = {0};
 	snprintf(winkel, 7, "%3.1f", Winkel);
-	snprintf(winkelgeschwindigkeit, 7, "%3.1f", Winkelgeschwindigkeit);
+	snprintf(winkelgeschwindigkeit, 8, "%5.1f", Winkelgeschwindigkeit);
 	for (int i = 0; 5 > i; i++) {
 		if (winkel[i] != letzter_winkel[i]) {
 			lcdGotoXY( 12 + i, 1);
@@ -36,7 +36,7 @@ void setValues(double Winkel, double Winkelgeschwindigkeit) {
 			}
 		}
 	}
-	for (int i = 0; 5 > i; i++) {
+	for (int i = 0; 7 > i; i++) {
 		if (winkelgeschwindigkeit[i] != letzte_winkelgeschwindigkeit[i]) {
 			lcdGotoXY( 23 + i, 2);
 			if (winkelgeschwindigkeit[i] == 0) {

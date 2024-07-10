@@ -3,11 +3,11 @@
 #include "error_handeling.h"
 #include "calculations.h"
 #include "DisplayOut.h"
-#include"zeitmessung.h"
+#include "zeitmessung.h"
 
 static volatile int pulse_count = 0;
 static volatile int fsm_state = ERROR_STATE;
-static int phase_fsm;
+static volatile int phase_fsm;
 static volatile int direction = 0;
 extern volatile int errno;
 
@@ -63,6 +63,8 @@ void get_first_phase() {
 
 
 void set_fsm_state() {
+	add_time();
+	//testing(get_time());
 	read_all();
 	get_phase(&phase_fsm);
 	fsm_state = transition_table[fsm_state][phase_fsm];

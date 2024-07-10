@@ -22,7 +22,7 @@ int setGPIOPin(GPIO_TypeDef* GPIOx, int pin, bool on);
 
 int readGPIOPin(GPIO_TypeDef* GPIOx, int pin, int *pin_value);
 
-int get_phase(int *phase_value);
+int get_phase(volatile int *phase_value);
 
 int get_error();
 

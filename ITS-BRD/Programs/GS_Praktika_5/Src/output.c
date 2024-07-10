@@ -59,11 +59,11 @@ int read_all() {
 	if (readGPIOPin(GPIOG, 1, &channel_b)) {
 		return OUT_OF_BOUNDS;
 	}
-	phase = phase_matrix [channel_a][channel_b];
+	phase = phase_matrix [channel_b][channel_a];
 	return SUCCESS;
 }
 
-int get_phase(int *phase_value) {
+int get_phase(volatile int *phase_value) {
 	if (phase == NO_ROTATION_YET) {
 		return NO_ROTATION_YET;
 	}

@@ -7,6 +7,8 @@
 #define _360_DEGREES 1200
 #define WARTEZEIT 45000000
 
+void add_time();
+
 void add_rotation();
 
 void print(int pulse_count);

@@ -49,9 +49,10 @@ int main(void){
 	init_output();
 	init_interrupts();
 	while (true) {
-		uint32_t time = get_time();
+		//testing(1);
+		uint64_t time = get_time();
 		int pulse = get_pulse_count();
-		uint32_t time_test = get_time();
+		uint64_t time_test = get_time();
 		int pulse_test = get_pulse_count();
 		if ((pulse_test != pulse) || (time_test != time)) {
 			time = get_time();
